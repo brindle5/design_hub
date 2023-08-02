@@ -1,0 +1,17 @@
+---
+name: 'Issue: User Story'
+about: This is our default user story template.
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+User Story:
+
+As a **role**, I can **capability** so that **received benefit**.
+
+Acceptance Criteria:
+
+
+Tasks:
