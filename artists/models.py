@@ -38,10 +38,10 @@ class Artist(models.Model):
         upload_to='images/', default='../default_post_vnjiii'
     )
     medium = models.ForeignKey(
-        Medium, on_delete=models.SET_NULL, null=False, blank=False
+        Medium, on_delete=models.CASCADE, null=False, blank=False
     )
     style = models.ForeignKey(
-        Style, on_delete=models.SET_NULL, null=False, blank=False
+        Style, on_delete=models.CASCADE, null=False, blank=False
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
