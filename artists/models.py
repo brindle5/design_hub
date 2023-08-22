@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Style(models.Model):
     # A model for artists to select their art style e.g. abstract, art deco, impressionism etc  # noqa
-    name = models.CharField(max_length=100, null=False, blank=False)
+    name = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -13,27 +13,27 @@ class Style(models.Model):
 
 class Medium(models.Model):
     # A model for artists to select their art medium e.g. pottery, oil, sculpture etc  # noqa
-    name = models.CharField(max_length=100, null=False, blank=False)
+    name = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.name
 
 
-# class ArtistWork(models.Model):
-#     # A model for artists to show their work
-#     name = models.CharField(max_length=150, null=False, blank=False)
-#     art_image1 = models.ImageField(
-#         upload_to='images/', default='../default_post_vnjiii'
-#     )
-#     art_image2 = models.ImageField(
-#         upload_to='images/', default='../default_post_vnjiii'
-#     )
-#     art_image3 = models.ImageField(
-#         upload_to='images/', default='../default_post_vnjiii'
-#     )
+class ArtistWork(models.Model):
+    # A model for artists to show their work
+    name = models.CharField(max_length=150, null=False, blank=False)
+    art_image1 = models.ImageField(
+        upload_to='images/', default='../default_post_vnjiii'
+    )
+    art_image2 = models.ImageField(
+        upload_to='images/', default='../default_post_vnjiii'
+    )
+    art_image3 = models.ImageField(
+        upload_to='images/', default='../default_post_vnjiii'
+    )
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 class Artist(models.Model):
@@ -42,17 +42,17 @@ class Artist(models.Model):
     profile_image = models.ImageField(
         upload_to='images/', default='../default_profile_qpd7ju'
     )
-    location = models.CharField(max_length=255, null=False, blank=False)
-    influences = models.TextField(null=False, blank=False)
+    location = models.CharField(max_length=255, null=True, blank=True)
+    influences = models.TextField(null=True, blank=True)
     medium = models.ForeignKey(
-        Medium, on_delete=models.CASCADE, null=False, blank=False
+        Medium, on_delete=models.CASCADE, null=True, blank=True
     )
     style = models.ForeignKey(
-        Style, on_delete=models.CASCADE, null=False, blank=False
+        Style, on_delete=models.CASCADE, null=True, blank=True
     )
-    # artistwork = models.ForeignKey(
-    #     ArtistWork, on_delete=models.CASCADE, null=False, blank=False
-    # )
+    artistwork = models.ForeignKey(
+        ArtistWork, on_delete=models.CASCADE, null=True, blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
