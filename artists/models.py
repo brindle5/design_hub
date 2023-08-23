@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Style(models.Model):
@@ -8,8 +9,7 @@ class Style(models.Model):
     name = models.CharField(
         max_length=100,
         null=True,
-        blank=True,
-        default=1
+        blank=True
         )
 
     def __str__(self):
@@ -21,8 +21,7 @@ class Medium(models.Model):
     name = models.CharField(
         max_length=100,
         null=True,
-        blank=True,
-        default=1
+        blank=True
         )
 
     def __str__(self):
@@ -84,7 +83,7 @@ class Artist(models.Model):
     owner = models.OneToOneField(
         User,
         on_delete=models.CASCADE
-        )    
+        )
     profile_image = models.ImageField(
         upload_to='images/',
         default='../default_profile_qpd7ju'
@@ -98,20 +97,14 @@ class Artist(models.Model):
         null=True,
         blank=True
         )
-    medium = models.OneToMany(
+    medium = models.ManyToMany(
         Medium,
         on_delete=models.CASCADE,
         null=True,
         blank=True
     )
-    style = models.OneToMany(
+    style = models.ManyToMany(
         Style,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True
-    )
-    artwork = models.ForeignKey(
-        Artwork,
         on_delete=models.CASCADE,
         null=True,
         blank=True
