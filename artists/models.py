@@ -81,9 +81,10 @@ class Artist(models.Model):
 class Artwork(models.Model):
     # A model for artists to show their work
     name = models.CharField(
-        max_length=100,
+        max_length=250,
         null=True,
-        blank=True
+        blank=True,
+        verbose_name='Artwork name'
         )
     artist = models.ForeignKey(
         Artist,
@@ -97,12 +98,6 @@ class Artwork(models.Model):
         null=True,
         blank=True
     )
-    art_image_name = models.CharField(
-        max_length=250,
-        null=True,
-        blank=True,
-        verbose_name='Artwork name'
-        )
     alt_text = models.CharField(
         max_length=250,
         null=True,
