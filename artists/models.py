@@ -36,9 +36,11 @@ class Artwork(models.Model):
         null=True,
         blank=True
     )
-    art_image = models.ImageField(
-        upload_to='images/',
-        default='../default_artwork_gko8de'
+    art_image = CloudinaryField(        
+        'art image',
+        folder='art images',
+        null=True,
+        blank=True
     )
     art_image_name = models.CharField(
         max_length=250,
@@ -75,7 +77,7 @@ class Artwork(models.Model):
     def image_url(self):
         if self.image:
             return self.image.url
-        return 'static/images/default_profile_picture_kodvuc'
+        return 'static/images/default_artwork.default_artwork.jpg'
 
 
 class Artist(models.Model):
@@ -84,9 +86,11 @@ class Artist(models.Model):
         User,
         on_delete=models.CASCADE
         )
-    profile_image = models.ImageField(
-        upload_to='images/',
-        default='../default_profile_qpd7ju'
+    profile_image = CloudinaryField(
+        'profile_image',
+        folder='profile_image',
+        null=True,
+        blank=True,
     )
     location = models.CharField(
         max_length=255,
@@ -124,6 +128,12 @@ class Artist(models.Model):
 
     def __str__(self):
         return f"{self.owner}'s profile"
+    
+    @property
+    def image_url(self):
+        if self.image:
+            return self.image.url
+        return 'static/images/default_profile_picture.jpg'
 
 
 def create_artist(sender, instance, created, **kwargs):
