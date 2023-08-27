@@ -4,9 +4,15 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .models import Style, Medium, Artist, Artwork
-from .serializers import ArtistSerializer
+from .serializers import ArtistSerializer, ArtworkSerializer
 from artists_collective.permissions import IsOwnerOrReadOnly
 from rest_framework import generics, permissions
+
+
+class ArtworkList(generics.ListCreateAPIView):
+    serializer_class = ArtworkSerializer
+    queryset = Artwork.objects.all()
+
 
 
 # class ArtistList(APIView):
@@ -21,8 +27,6 @@ from rest_framework import generics, permissions
 class ArtistList(generics.ListAPIView):
     serializer_class = ArtistSerializer
     queryset = Artist.objects.all()
-
-
 
 
 class ArtistDetail(APIView):

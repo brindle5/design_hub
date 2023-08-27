@@ -92,7 +92,7 @@ class Artwork(models.Model):
         null=True,
         blank=True
     )
-    art_image = CloudinaryField(        
+    art_image = CloudinaryField(
         'art image',
         folder='art images',
         null=True,
