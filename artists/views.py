@@ -10,7 +10,9 @@ from artists_collective.permissions import IsOwnerOrReadOnly
 class ArtistList(APIView):
     def get(self, request):
         artists = Artist.objects.all()
-        serializer = ArtistSerializer(artists, many=True)
+        serializer = ArtistSerializer(
+            artists, many=True, context={'request': request}
+        )
         return Response(serializer.data)
 
 
@@ -28,12 +30,16 @@ class ArtistDetail(APIView):
 
     def get(self, request, pk):
         artist = self.get_object(pk)
-        serializer = ArtistSerializer(artist)
+        serializer = ArtistSerializer(
+            artist, context={'request': request}
+        )
         return Response(serializer.data)
 
     def put(self, request, pk):
         artist = self.get_object(pk)
-        serializer = ArtistSerializer(artist, data=request.data)
+        serializer = ArtistSerializer(
+            artist, data=request.data, context={'request': request}
+            )
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
