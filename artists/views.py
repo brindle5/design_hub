@@ -2,18 +2,27 @@ from django.http import Http404
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
 from .models import Style, Medium, Artist, Artwork
 from .serializers import ArtistSerializer
 from artists_collective.permissions import IsOwnerOrReadOnly
+from rest_framework import generics, permissions
 
 
-class ArtistList(APIView):
-    def get(self, request):
-        artists = Artist.objects.all()
-        serializer = ArtistSerializer(
-            artists, many=True, context={'request': request}
-        )
-        return Response(serializer.data)
+# class ArtistList(APIView):
+#     def get(self, request):
+#         artists = Artist.objects.all()
+#         serializer = ArtistSerializer(
+#             artists, many=True, context={'request': request}
+#         )
+#         return Response(serializer.data)
+
+
+class ArtistList(generics.ListAPIView):
+    serializer_class = ArtistSerializer
+    queryset = Artist.objects.all()
+
+
 
 
 class ArtistDetail(APIView):
