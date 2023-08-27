@@ -3,7 +3,7 @@ from .models import Style, Medium, Artist, Artwork
 
 
 class ArtistSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.artist')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Artist
