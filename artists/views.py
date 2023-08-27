@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Style, Medium, Artist, Artwork
 from .serializers import ArtistSerializer
+from artists_collective.permissions import IsOwnerOrReadOnly
 
 
 class ArtistList(APIView):
@@ -15,10 +16,12 @@ class ArtistList(APIView):
 
 class ArtistDetail(APIView):
     serializer_class = ArtistSerializer
+    permission_classes = [IsOwnerOrReadOnly]
 
     def get_object(self, pk):
         try:
             artist = Artist.objects.get(pk=pk)
+            self.check_object_permissions(self.request, artist)
             return artist
         except Artist.DoesNotExist:
             raise Http404
