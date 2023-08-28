@@ -13,15 +13,14 @@ class ArtworkList(generics.ListCreateAPIView):
     serializer_class = ArtworkSerializer
     queryset = Artwork.objects.all()
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
-# class ArtistList(APIView):
-#     def get(self, request):
-#         artists = Artist.objects.all()
-#         serializer = ArtistSerializer(
-#             artists, many=True, context={'request': request}
-#         )
-#         return Response(serializer.data)
+# class ArworkDetail(generics.RetrieveUpdateDestroyAPIView):
+#     serializer_class = ArtworkSerializer
+#     permission_classes = [IsOwnerOrReadOnly]
+#     queryset = Artwork.objects.all()
 
 
 class ArtistList(generics.ListAPIView):
@@ -29,31 +28,7 @@ class ArtistList(generics.ListAPIView):
     queryset = Artist.objects.all()
 
 
-class ArtistDetail(APIView):
-    serializer_class = ArtistSerializer
+class ArtistDetail(generics.RetrieveUpdateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
-
-    def get_object(self, pk):
-        try:
-            artist = Artist.objects.get(pk=pk)
-            self.check_object_permissions(self.request, artist)
-            return artist
-        except Artist.DoesNotExist:
-            raise Http404
-
-    def get(self, request, pk):
-        artist = self.get_object(pk)
-        serializer = ArtistSerializer(
-            artist, context={'request': request}
-        )
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        artist = self.get_object(pk)
-        serializer = ArtistSerializer(
-            artist, data=request.data, context={'request': request}
-            )
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    serializer_class = ArtistSerializer
+    queryset = Artist.objects.all().order_by('-created_at')
