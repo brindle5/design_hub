@@ -10,6 +10,7 @@ from rest_framework import generics, permissions
 
 
 class ArtworkList(generics.ListCreateAPIView):
+    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ArtworkSerializer
     queryset = Artwork.objects.all()
 
@@ -17,7 +18,7 @@ class ArtworkList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-# class ArworkDetail(generics.RetrieveUpdateDestroyAPIView):
+# class ArtworkDetail(generics.RetrieveUpdateDestroyAPIView):
 #     serializer_class = ArtworkSerializer
 #     permission_classes = [IsOwnerOrReadOnly]
 #     queryset = Artwork.objects.all()

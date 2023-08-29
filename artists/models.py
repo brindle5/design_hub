@@ -50,10 +50,12 @@ class Artist(models.Model):
         blank=True
         )
     medium = models.ManyToManyField(
-        Medium
+        Medium,
+        blank=True
     )
     style = models.ManyToManyField(
-        Style
+        Style,
+        blank=True
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
