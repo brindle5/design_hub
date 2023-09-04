@@ -68,7 +68,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     '8000-brindle5-designhub-2qm4lz9cktg.ws-eu104.gitpod.io',
     'localhost',
-    'https://design-hub-af7f99885c3f.herokuapp.com'
+    'design-hub-af7f99885c3f.herokuapp.com'
 ]
 
 
