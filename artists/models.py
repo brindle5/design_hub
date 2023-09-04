@@ -77,7 +77,7 @@ class Artist(models.Model):
     def image_url(self):
         if self.image:
             return self.image.url
-        return './static/images/default_profile_picture.jpg'
+        return '../static/images/default_profile_picture.jpg'
 
 
 def create_artist(sender, instance, created, **kwargs):
