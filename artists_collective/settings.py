@@ -65,7 +65,8 @@ SECRET_KEY = {
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = 'DEBUG' in os.environ
+# DEBUG = 'DEBUG' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
