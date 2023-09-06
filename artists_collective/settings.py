@@ -72,7 +72,7 @@ ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     # '8000-brindle5-designhub-2qm4lz9cktg.ws-eu104.gitpod.io',
     'localhost',
-    # 'design-hub-af7f99885c3f.herokuapp.com'
+    'design-hub-af7f99885c3f.herokuapp.com'
 ]
 
 
