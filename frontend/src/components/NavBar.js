@@ -5,7 +5,7 @@ function NavBar() {
     <div>
 
 
-        <h1>Hello I'm a NavBar</h1>
+        
     </div>
   )
 }
