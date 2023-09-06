@@ -66,13 +66,12 @@ SECRET_KEY = {
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
 # DEBUG = 'DEBUG' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     # '8000-brindle5-designhub-2qm4lz9cktg.ws-eu104.gitpod.io',
-    'localhost',
-    'design-hub-af7f99885c3f.herokuapp.com'
+    'localhost'
 ]
 
 
