@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from 'axios';
 
 // Main layout of form taken from Code Institute's Moments Project
 
@@ -12,6 +14,9 @@ const SignUpForm = () => {
   })
 
   const { username, password1, password2 } = signUpData;
+  const [errors, setErrors] = useState({});
+
+  const history = useHistory();
 
   const handleChange = (event) => {
     setSignUpData({
@@ -20,13 +25,23 @@ const SignUpForm = () => {
     })
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post('/dj-rest-auth/registration/', signUpData)
+      history.push('/signin')
+    } catch(err) {
+      setErrors(err.response?.data)
+     }
+  };
+
   return (
     <Row >
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className= "p-4" >
           <h3>Sign up for an account!</h3>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="username">
         <Form.Label className="d-none">Username</Form.Label>
         <Form.Control 
@@ -37,7 +52,9 @@ const SignUpForm = () => {
             onChange={handleChange}
         />
       </Form.Group>
-
+      {errors.username?.map((message, idx) => 
+      <Alert variant="danger" key={idx}>{message}</Alert>)}
+      
       <Form.Group className="mb-3" controlId="password1">
         <Form.Label className="d-none">Password</Form.Label>
         <Form.Control 
@@ -48,6 +65,8 @@ const SignUpForm = () => {
             onChange={handleChange}
         />
       </Form.Group>
+      {errors.password1?.map((message, idx) => 
+      <Alert variant="danger" key={idx}>{message}</Alert>)}
 
       <Form.Group className="mb-3" controlId="password2">
         <Form.Label className="d-none">Confirm password</Form.Label>
@@ -59,20 +78,15 @@ const SignUpForm = () => {
             onChange={handleChange}
         />
       </Form.Group>
+      {errors.password2?.map((message, idx) => 
+      <Alert variant="danger" key={idx}>{message}</Alert>)}
 
 
       <Button variant="success" type="submit">
         Sign me up!
       </Button>
     </Form>
-
-
-
-
-
-
-
-           
+         
 
         </Container>
         <Container className="mt-3">
