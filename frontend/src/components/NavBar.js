@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import {Navbar, Nav, Container } from 'react-bootstrap';
+
 
 
 const NavBar = () => {
@@ -13,10 +13,10 @@ const NavBar = () => {
 
   <Navbar.Collapse id="basic-navbar-nav">
 
-    <Nav className="mr-auto">
-      <Nav.Link>Home</Nav.Link>
-      <Nav.Link>Sign In</Nav.Link>
-      <Nav.Link>Sign Up</Nav.Link>
+    <Nav className="ml-auto text-left">
+      <Nav.Link><i className="fas fa-house"></i> Home</Nav.Link>
+      <Nav.Link><i className="fas fa-right-from-bracket"></i> Sign In</Nav.Link>
+      <Nav.Link><i class="fas fa-user-plus"></i> Sign Up</Nav.Link>
     </Nav>
   </Navbar.Collapse>
   
