@@ -1,5 +1,7 @@
 import React from 'react'
 import {Navbar, Nav, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import styles from '../styles/css/NavBar.module.css';
 
 
 
@@ -13,10 +15,12 @@ const NavBar = () => {
 
   <Navbar.Collapse id="basic-navbar-nav">
 
-    <Nav className="ml-auto text-left">
-      <Nav.Link><i className="fas fa-house"></i> Home</Nav.Link>
-      <Nav.Link><i className="fas fa-right-from-bracket"></i> Sign In</Nav.Link>
-      <Nav.Link><i class="fas fa-user-plus"></i> Sign Up</Nav.Link>
+    <Nav className={`ml-auto text-left ${styles.NavBar}`}>
+
+      <NavLink exact to="/"
+        ><i className="fas fa-house"></i> Home</NavLink>
+      <NavLink exact to="/signin"><i className="fas fa-right-from-bracket"></i> Sign In</NavLink>
+      <NavLink exact to="/signup"><i class="fas fa-user-plus"></i> Sign Up</NavLink>
     </Nav>
   </Navbar.Collapse>
   
