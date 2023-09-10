@@ -23,7 +23,7 @@ const NavBar = () => {
   const addArtworkIcon = (
     <NavLink 
     exact to="/artwork/create">
-      <i className="fa-solid fa-upload"></i>
+      <i className="fa-solid fa-upload">  </i>
        Add Artwork
       </NavLink>
   )
@@ -32,13 +32,13 @@ const NavBar = () => {
   <>
         <NavLink 
     exact to="/feed">
-      <i className="fa-solid fa-bars-staggered"></i>
+      <i className="fa-solid fa-bars-staggered"> </i>
        Feed
     </NavLink>
     <NavLink 
     to={`/profiles/${currentUser?.artist_id}`}>
-      <i className="fa-solid fa-user"></i>
-      <Avatar 
+      <i className="fa-solid fa-user">  </i>
+       <Avatar 
       src={currentUser?.profile_image} 
       text="Profile" 
       height={20} />
@@ -47,7 +47,7 @@ const NavBar = () => {
      <NavLink 
     exact to="/" onClick={handleSignOut}
     >
-      <i className="fas fa-right-from-bracket"></i>
+      <i className="fas fa-right-from-bracket">  </i>
        Sign Out
       </NavLink>   
   </>
@@ -57,13 +57,13 @@ const NavBar = () => {
     <>    
     <NavLink 
     exact to="/signin">
-      <i className="fa-solid fa-user"></i>
+      <i className="fa-solid fa-user {styles.NavBar}">  </i>
        Sign In
       </NavLink>
 
       <NavLink 
       exact to="/signup">
-      <i className="fas fa-user-plus"></i>
+      <i className="fas fa-user-plus">  </i>
       Sign Up
       </NavLink> 
     </>
@@ -73,7 +73,7 @@ const NavBar = () => {
     <div>
 <Navbar fixed="top" expand="md">
     <Container>
-  <Navbar.Brand>Welcome to the Design Hub</Navbar.Brand>
+  <Navbar.Brand></Navbar.Brand>
   {currentUser && addArtworkIcon}
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -82,7 +82,7 @@ const NavBar = () => {
     <Nav className={`ml-auto text-left ${styles.NavBar}`}>
 
       <NavLink exact to="/"
-        ><i className="fas fa-house"></i> Home</NavLink>
+        ><i className="fas fa-house">  </i> Home</NavLink>
     {currentUser ? loggedInIcons : loggedOutIcons}
     </Nav>
   </Navbar.Collapse>
