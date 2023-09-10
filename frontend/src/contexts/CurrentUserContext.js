@@ -1,8 +1,9 @@
 // Context code taken from Code Institute's Moments walkthrough project
 
-import { createContext, useContext, useEffect, useState, useMemo, useHistory } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import { axiosRes, axiosReq } from "../api/axiosDefaults";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();

@@ -2,8 +2,9 @@ import React from 'react'
 import {Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/css/NavBar.module.css';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from "./Avatar";
+import axios from 'axios';
 
 
 const NavBar = () => {
@@ -62,7 +63,7 @@ const NavBar = () => {
 
       <NavLink 
       exact to="/signup">
-      <i class="fas fa-user-plus"></i>
+      <i className="fas fa-user-plus"></i>
       Sign Up
       </NavLink> 
     </>

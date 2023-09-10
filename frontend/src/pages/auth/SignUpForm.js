@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+// import styles from '../styles/css/SignInUpForm.module.css';
 import { Link } from "react-router-dom";
 import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -18,8 +19,8 @@ const SignUpForm = () => {
   const history = useHistory();
   const handleChange = (event) => {
     setSignUpData({
-      ...setSignUpData,
-      [event.target.name]: event.target.value,
+      ...signUpData,
+      [event.target.name]: event.target.value,      
     });
   };
 
@@ -29,6 +30,7 @@ const SignUpForm = () => {
       await axios.post('/dj-rest-auth/registration/', signUpData);
       history.push('/signin');
     } catch (err) {
+      console.log(err.response)
       setErrors(err.response?.data);
      }
   };

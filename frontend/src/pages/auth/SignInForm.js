@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-// import styles from '.../styles/css/SignInUpForm.module.css';
+// import styles from '../styles/css/SignInUpForm.module.css';
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -24,12 +24,13 @@ function SignInForm() {
 
     const handleChange = (event) => {
         setSignInData({
-          ...setSignInData,
+          ...signInData,
           [event.target.name]: event.target.value,
         });
       };
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(signInData)
         try {
           const {data} = await axios.post('/dj-rest-auth/login/', signInData);
           setCurrentUser(data.user);
@@ -48,11 +49,12 @@ function SignInForm() {
           <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="username">
         <Form.Label className="d-none">Username</Form.Label>
-        <Form.Control 
-            type="text" 
-            placeholder="username" 
-            value={username}
-            onChange={handleChange}
+        <Form.Control
+          type="text"
+          placeholder="Username"
+          name="username"
+          value={username}
+          onChange={handleChange}
         />
       </Form.Group>
       {errors.username?.map((message, idx) => (
@@ -68,6 +70,7 @@ function SignInForm() {
             placeholder="password" 
             value={password}
             onChange={handleChange}
+            name="password"
         />
       </Form.Group>
       {errors.password?.map((message, idx) => (
