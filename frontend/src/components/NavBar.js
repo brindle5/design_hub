@@ -3,10 +3,21 @@ import {Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/css/NavBar.module.css';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
+import Avatar from "./Avatar";
 
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const addArtworkIcon = (
     <NavLink 
@@ -26,12 +37,14 @@ const NavBar = () => {
     <NavLink 
     to={`/profiles/${currentUser?.artist_id}`}>
       <i className="fa-solid fa-user"></i>
-       <img />
+      <Avatar 
+      src={currentUser?.profile_image} 
+      text="Profile" 
+      height={20} />
     </NavLink>
 
      <NavLink 
-    exact to="/" 
-    // onClick={}
+    exact to="/" onClick={handleSignOut}
     >
       <i className="fas fa-right-from-bracket"></i>
        Sign Out
