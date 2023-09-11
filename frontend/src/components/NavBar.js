@@ -1,7 +1,7 @@
 import React from 'react'
 import {Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
-import styles from '../styles/css/NavBar.module.css';
+import styles from '../styles/NavBar.module.css';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from "./Avatar";
 import axios from 'axios';
