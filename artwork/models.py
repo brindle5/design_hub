@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 
 class Artwork(models.Model):
     # A model for artists to show their work
-    name = models.CharField(
+    title = models.CharField(
         max_length=250,
         null=True,
         blank=True,
-        verbose_name='Artwork name'
+        verbose_name='Artwork title'
         )
     owner = models.ForeignKey(
         User,
