@@ -38,9 +38,45 @@
 
 ### GitHub Projects
 
+[GitHub Projects](https://github.com/brindle5/design_hub/projects) served as an Agile tool for this project. I tracked my user stories using the basic Kanban board.
+
+![Project board screenshot](documentation/project_board.jpg)
+
 ### GitHub Issues
 
+[GitHub Issues](https://github.com/brindle5/design_hub/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories. It also helped with milestone iterations on a weekly basis.
+
+![Open issues screenshot](documentation/open_issues.png)
+
+![Closed issues screenshot](documentation/closed_issues.png)
+
 ### MoSCoW Prioritization
+
+I applied MoSCow prioritization and labels to my user stories within the Issues tab.
+
+**Must Have**: guaranteed to be delivered 
+
+- As a site user, I can create an account so that other artists can find and contact me.
+- As a site user, I can read other artists' profiles so that I can find someone to work with on projects.
+- As a site user, I can edit my profile so that I can alter my interests.
+- As a site user, I can add a piece of artwork so that other artists can see my style and medium.
+- As a site user, I can edit a piece of artwork so that I can reach the best possible audience.
+- As a site user, I can delete a piece of artwork so that I can customise my profile for maximum benefit.
+
+**Should Have**: adds significant value, but not vital 
+
+There were no user stories placed in this category.
+
+**Could Have**: has small impact if left out 
+
+- As a site user, I can search for other artists so that I can find someone with the same interests.
+
+**Won't Have**: not a priority for this iteration
+
+- As a site user, I can delete my profile so that other users can no longer find me.
+- As a site user, I can message other artists so that I can organise collaborations.
+- As a site user, I can contact the design hub directly so that I can raise issues, comments, or questions.
 
 ## Testing
 
