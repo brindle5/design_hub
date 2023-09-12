@@ -7,7 +7,7 @@
 
  import axios from 'axios';
 
-//  axios.defaults.baseURL = 'https://design-hub-af7f99885c3f.herokuapp.com/';
+ axios.defaults.baseURL = '/api';
  axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
  axios.defaults.withCredentials = true;
 
