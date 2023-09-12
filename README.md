@@ -8,6 +8,18 @@
 
 ## User Stories
 
+- As a site user, I can create an account so that other artists can find and contact me.
+- As a site user, I can read other artists' profiles so that I can find someone to work with on projects.
+- As a site user, I can edit my profile so that I can alter my interests.
+- As a site user, I can delete my profile so that other users can no longer find me.
+- As a site user, I can search for other artists so that I can find someone with the same interests.
+- As a site user, I can message other artists so that I can organise collaborations.
+- As a site user, I can contact the design hub directly so that I can raise issues, comments, or questions.
+- As a site user, I can add a piece of artwork so that other artists can see my style and medium.
+- As a site user, I can edit a piece of artwork so that I can reach the best possible audience.
+- As a site user, I can delete a piece of artwork so that I can customise my profile for maximum benefit.
+
+
 ## Wireframes
 
 ## Features
