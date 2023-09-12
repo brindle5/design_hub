@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/" render={() => <h1>Design Hub</h1>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />     
-          <Route exact path="/artwork/add" render={() => <AddArtworkForm />} />   
+          <Route exact path="/artwork/create" render={() => <AddArtworkForm />} />   
         </Switch>
       </Container>
     </div>

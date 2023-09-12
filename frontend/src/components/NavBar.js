@@ -3,7 +3,7 @@ import {Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
-import Avatar from "./Avatar";
+// import Avatar from "./Avatar";
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
@@ -41,10 +41,11 @@ const NavBar = () => {
     <NavLink 
     to={`/profiles/${currentUser?.artist_id}`}>
       <i className="fa-solid fa-user">  </i>
-       <Avatar 
+      Profile
+       {/* <Avatar 
       src={currentUser?.profile_image} 
       text="Profile" 
-      height={20} />
+      height={20} /> */}
     </NavLink>
 
      <NavLink 

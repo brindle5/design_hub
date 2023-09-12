@@ -75,8 +75,8 @@ class Artist(models.Model):
 
     @property
     def image_url(self):
-        if self.image:
-            return self.image.url
+        if self.profile_image:
+            return self.profile_image.url
         return '../static/images/default_profile_picture.jpg'
 
 

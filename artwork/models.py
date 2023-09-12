@@ -50,6 +50,6 @@ class Artwork(models.Model):
 
     @property
     def image_url(self):
-        if self.image:
-            return self.image.url
+        if self.art_image:
+            return self.art_image.url
         return '../static/images/default_artwork.jpg'
