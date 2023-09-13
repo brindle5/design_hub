@@ -5,7 +5,7 @@ from .serializers import CommentSerializer, CommentDetailSerializer
 
 
 class CommentList(generics.ListCreateAPIView):
-    """Artists can add view comments on artwork pieces""""
+    """Artists can add and view comments on artwork pieces"""
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()

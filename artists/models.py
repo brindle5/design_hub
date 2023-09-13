@@ -5,7 +5,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Style(models.Model):
-    # A model for artists to select their art style e.g. abstract, art deco, impressionism etc  # noqa
+    """A model for artists to select their art style 
+        e.g. abstract, art deco, impressionism etc
+    """
     name = models.CharField(
         max_length=100,
         null=True,
@@ -17,7 +19,9 @@ class Style(models.Model):
 
 
 class Medium(models.Model):
-    # A model for artists to select their art medium e.g. pottery, oil, sculpture etc  # noqa
+    """ A model for artists to select their art medium 
+        e.g. pottery, oil, sculpture etc
+    """
     name = models.CharField(
         max_length=100,
         null=True,
@@ -29,7 +33,7 @@ class Medium(models.Model):
 
 
 class Artist(models.Model):
-    # A model for artists to promote themselves on the design hub site
+    """ A model for artists to promote themselves on the design hub site """
     owner = models.OneToOneField(
         User,
         on_delete=models.CASCADE

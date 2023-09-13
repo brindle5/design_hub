@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Artwork(models.Model):
-    # A model for artists to show their work
+    """ A model for artists to show their work """
     title = models.CharField(
         max_length=250,
         null=True,
