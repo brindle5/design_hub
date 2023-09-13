@@ -4,6 +4,7 @@ from django.contrib.humanize.templatetags.humanize import naturalday
 
 
 class ArtistSerializer(serializers.ModelSerializer):
+    # Serializer for artist model
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     created_at = serializers.SerializerMethodField()
