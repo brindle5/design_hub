@@ -30,6 +30,7 @@ urlpatterns = [
     ),
     path('api/', include('artists.urls')),
     path('api/', include('artwork.urls')),
+    path('api/', include('comments.urls')),
 ]
 
 handler404 = TemplateView.as_view(template_name='index.html')
