@@ -90,6 +90,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'artists',
     'artwork',
+    'comments',
 ]
 
 SITE_ID = 1
