@@ -13,7 +13,7 @@ class ArtworkList(generics.ListCreateAPIView):
     serializer_class = ArtworkSerializer
     queryset = Artwork.objects.annotate(
         comments_count=Count('comment', distinct=True)
-    ).order_by('-created_at')
+    ).order_by('-added_date')
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
@@ -40,4 +40,4 @@ class ArtworkDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Artwork.objects.annotate(
         comments_count=Count('comment', distinct=True)
-    ).order_by('-created_at')
+    ).order_by('-added_date')
