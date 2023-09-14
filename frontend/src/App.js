@@ -6,7 +6,7 @@ import "./api/axiosDefaults";
 import SignUpPage from './pages/auth/SignUpPage';
 import AddArtworkPage from './pages/artwork/AddArtworkPage';
 import SignInPage from './pages/auth/SignInPage';
-import ArtworkPage from './pages/artwork/ArtworkPage';
+import ArtPiecePage from './pages/artwork/ArtPiecePage';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInPage />} />
           <Route exact path="/signup" render={() => <SignUpPage />} />     
           <Route exact path="/artwork/create" render={() => <AddArtworkPage />} />  
-          <Route exact path="/artwork/:id" render={() => <ArtworkPage />} /> 
+          <Route exact path="/artwork/:id" render={() => <ArtPiecePage />} />
         </Switch>
       </Container>
     </div>
