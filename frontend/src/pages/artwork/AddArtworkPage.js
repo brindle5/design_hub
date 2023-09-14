@@ -15,10 +15,6 @@ import Artwork from "../../components/Artwork";
 import Upload from "../../assets/upload.png";
 
 
-// import styles from "../../styles/AddArtworkForm.module.css";
-// import appStyles from "../../App.module.css";
-// import btnStyles from "../../styles/Button.module.css";
-
 function AddArtworkPage() {
   const [errors, setErrors] = useState({});
   const [artworkData, setArtworkData] = useState({

@@ -2,6 +2,7 @@ from .models import Artwork
 from .serializers import ArtworkSerializer
 from artists_collective.permissions import IsOwnerOrReadOnly
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from django.core import exceptions
 from django.db.models import Count
 
@@ -16,6 +17,7 @@ class ArtworkList(generics.ListCreateAPIView):
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
     ]
     search_fields = [
         'owner__username',

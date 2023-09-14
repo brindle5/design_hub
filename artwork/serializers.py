@@ -9,6 +9,7 @@ class ArtworkSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     added_date = serializers.SerializerMethodField()
     edited_date = serializers.SerializerMethodField()
+    comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         """ Validate image code taken from CI's DRF project"""
@@ -46,4 +47,5 @@ class ArtworkSerializer(serializers.ModelSerializer):
             'added_date',
             'edited_date',
             'is_owner',
+            'comments_count',
         ]
