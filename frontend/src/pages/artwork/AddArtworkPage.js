@@ -1,21 +1,25 @@
+import { useHistory} from "react-router-dom"; 
+import { axiosReq } from "../../api/axiosDefaults";
 import React, { useState, useRef } from "react";
+
 import { Alert } from "react-bootstrap";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+
 import Artwork from "../../components/Artwork";
-import { useHistory} from "react-router-dom"; 
 import Upload from "../../assets/upload.png";
-import { axiosReq } from "../../api/axiosDefaults";
+
 
 // import styles from "../../styles/AddArtworkForm.module.css";
 // import appStyles from "../../App.module.css";
 // import btnStyles from "../../styles/Button.module.css";
 
-function AddArtworkForm() {
+function AddArtworkPage() {
   const [errors, setErrors] = useState({});
   const [artworkData, setArtworkData] = useState({
     title: "",
@@ -25,7 +29,7 @@ function AddArtworkForm() {
   const {title, image} = artworkData;
   const imageInput = useRef(null);
 
-  const handleChange = (event) => {
+  const handleAddTitle = (event) => {
     setArtworkData({
       ...artworkData,
       [event.target.name]: event.target.value,
@@ -44,10 +48,6 @@ function AddArtworkForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const artworkData = new artworkData();
-    artworkData.append("title", title);
-    artworkData.append("image", imageInput.current.files[0]);
-
     try {
       const { data } = await axiosReq.post("/artwork/", artworkData);
       history.push(`/artwork/${data.id}`);
@@ -67,7 +67,8 @@ function AddArtworkForm() {
           type="text" 
           placeholder="Artwork Title"
           value={title}
-          onChange={handleChange} 
+          onChange={handleAddTitle}
+          name="title" 
           />
         <Form.Text className="text-muted">          
         </Form.Text>
@@ -143,4 +144,4 @@ function AddArtworkForm() {
   );
 }
 
-export default AddArtworkForm
+export default AddArtworkPage

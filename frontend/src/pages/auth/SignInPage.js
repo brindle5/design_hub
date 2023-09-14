@@ -10,7 +10,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
-function SignInForm() {
+function SignInPage() {
   const setCurrentUser = useSetCurrentUser();
 
     const [signInData, setSignInData] = useState({
@@ -104,4 +104,4 @@ function SignInForm() {
   );
 };
 
-export default SignInForm;
+export default SignInPage;

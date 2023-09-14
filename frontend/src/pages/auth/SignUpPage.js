@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // Main layout of form taken from Code Institute's Moments Project
 
-const SignUpForm = () => {
+const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -114,4 +114,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignUpPage;
