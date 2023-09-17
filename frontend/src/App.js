@@ -11,8 +11,6 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ArtworkListPage from './pages/artwork/ArtworkListPage';
 
 
-{/* <h1 className='header'>Design Hub</h1> */}
-
 function App() {
   const currentUser = useCurrentUser();
   const artist_id = currentUser?.artist_id || "";
