@@ -1,10 +1,15 @@
-# DESIGN HUB
+# Design Hub
+
+The design hub is a website geared towards artists who want to find other artists to collaborate with. Artists can create a profile and choose which styles and mediums they like to work in, as well as upload samples of their work to an online portfolio. In turn they can also view other artists’ work to see if their styles are compatible.
 
 ## UX
 
 ### Colour Scheme
 
 ### Typography
+
+- [Open Sans]( https://fonts.google.com/specimen/Open+Sans) from Google Fonts were used for the site.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site such as links in the navigation bar and edit/delete functionalities.
 
 ## User Stories
 
@@ -141,9 +146,10 @@ Deployment steps are as follows, after account setup:
 | `CLIENT_ORIGIN` | user's own value |
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
 
-Heroku needs two additional files in order to deploy properly.
+Heroku needs three additional files in order to deploy properly.
 - requirements.txt
 - Procfile
+- runtime.txt
 
 You can install this project's **requirements** (where applicable) using:
 - `pip3 install -r requirements.txt`
@@ -154,6 +160,10 @@ If you have your own packages that have been installed, then the requirements fi
 The **Procfile** can be created with the following command:
 - `echo web: gunicorn app_name.wsgi > Procfile`
 - *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+
+Heroku needs runtime.txt to know what version of Python to use and for that, use the line:
+- `python-3.9.16`
+
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
@@ -168,8 +178,43 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
-
 ### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+import os
+
+- os.environ['CLOUDINARY_URL'] = 'user’s own value’
+- os.environ['DATABASE_URL'] = 'user’s own value’
+- os.environ['SECRET_KEY'] = 'user’s own value’
+- os.environ['CLIENT_ORIGIN'] = 'user’s own value’
+- os.environ['ALLOWED_HOST'] = 'user’s own value’
+
+(Local evnironment only, do not run in a production environment):
+- os.environ['DEBUG'] = '1'
+- os.environ['DEV'] = '1'
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+
+If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+- `python3 manage.py dumpdata your-model > your-model.json`
+- *repeat this action for each model you wish to backup*
+
 
 #### Cloning
 
