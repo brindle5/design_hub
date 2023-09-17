@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import {Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
-import styles from '../styles/NavBar.module.css';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
@@ -77,7 +76,7 @@ const NavBar = () => {
 
   <Navbar.Collapse id="basic-navbar-nav">
 
-    <Nav className={`ml-auto text-left ${styles.NavBar}`}>
+    <Nav className= "ml-auto text-left">
 
       <NavLink exact to="/"
         ><i className="fas fa-house">  </i> Home</NavLink>

@@ -14,7 +14,6 @@ function App() {
   return (
 
     <div className="App">
-      {/* Add styles main */}
       <NavBar />
       <Container>
         <Switch>
