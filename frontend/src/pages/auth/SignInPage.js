@@ -30,7 +30,6 @@ function SignInPage() {
       };
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(signInData)
         try {
           const {data} = await axios.post('/dj-rest-auth/login/', signInData);
           setCurrentUser(data.user);
