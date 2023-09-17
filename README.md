@@ -30,7 +30,31 @@
 
 ## Tools & Technologies Used
 
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
+- [JavaScript](https://www.javascript.com) used for user interaction on the site.
+- [Python](https://www.python.org) used as the back-end programming language.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage.
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
+- [React Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Django](https://www.djangoproject.com) used as the Python framework for the site.
+- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/) used to provide registration functionality.
+- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
+- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
+- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
+- [Cloudinary](https://cloudinary.com) used for online static file storage.
+- [Whitenoise](https://whitenoise.readthedocs.io/en/latest/django.html) used for serving static files.
+- [Django Filters](https://django-filter.readthedocs.io/en/stable/)- used for adding search functionality to serializers
+- [Pillow](https://pypi.org/project/Pillow/) used for adding image processing capabilities
+
 ## Database Design
+
+Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models. I used [draw.io](https://app.diagrams.net/) to create my ERD.
+
+![Entity relationship diagram screenshot](documentation/entity_relationship_diagram.png)
 
 ## Reuseable Components
 
