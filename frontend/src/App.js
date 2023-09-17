@@ -17,7 +17,7 @@ function App() {
       <NavBar />
       <Container>
         <Switch>
-          <Route exact path="/" render={() => <h1>Design Hub</h1>} />
+          <Route exact path="/" render={() => <h1 className='header'>Design Hub</h1>} />
           <Route exact path="/signin" render={() => <SignInPage />} />
           <Route exact path="/signup" render={() => <SignUpPage />} />     
           <Route exact path="/artwork/create" render={() => <AddArtworkPage />} />  

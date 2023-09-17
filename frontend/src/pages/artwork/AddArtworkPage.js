@@ -56,7 +56,7 @@ function AddArtworkPage() {
   };
 
   const textFields = (
-    <div className="text-center">
+    <div className="text-center artInputField">
     <Form.Group className="mb-3" controlId="title">
         <Form.Label className="d-none">Artwork Title</Form.Label>
         <Form.Control 
@@ -94,7 +94,7 @@ function AddArtworkPage() {
           <Container
             className='d-flex flex-column justify-content-center'
           >
-            <Form.Group className="text-center">
+            <Form.Group className="text-center artInputField">
 
             {image ? (
                 <>

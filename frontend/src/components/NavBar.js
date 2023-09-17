@@ -23,7 +23,7 @@ const NavBar = () => {
   };
 
   const addArtworkIcon = (
-    <NavLink 
+    <NavLink className="iconLink"
     exact to="/artwork/create">
       <i className="fa-solid fa-upload">  </i>
        Add Artwork
@@ -32,13 +32,13 @@ const NavBar = () => {
 
   const loggedInIcons = (
   <>
-    <NavLink 
+    <NavLink className="iconLink"
     to={`/profiles/${currentUser?.artist_id}`}>
       <i className="fa-solid fa-user">  </i>
       Profile
     </NavLink>
 
-     <NavLink 
+     <NavLink className="iconLink"
     exact to="/" onClick={handleSignOut}
     >
       <i className="fas fa-right-from-bracket">  </i>
@@ -49,13 +49,13 @@ const NavBar = () => {
   
   const loggedOutIcons = (
     <>    
-    <NavLink 
+    <NavLink className="iconLink"
     exact to="/signin">
-      <i className="fa-solid fa-user {styles.NavBar}">  </i>
+      <i className="fa-solid fa-user">  </i>
        Sign In
       </NavLink>
 
-      <NavLink 
+      <NavLink className="iconLink"
       exact to="/signup">
       <i className="fas fa-user-plus">  </i>
       Sign Up
@@ -78,7 +78,7 @@ const NavBar = () => {
 
     <Nav className= "ml-auto text-left">
 
-      <NavLink exact to="/"
+      <NavLink className="iconLink" exact to="/"
         ><i className="fas fa-house">  </i> Home</NavLink>
     {currentUser ? loggedInIcons : loggedOutIcons}
     </Nav>
