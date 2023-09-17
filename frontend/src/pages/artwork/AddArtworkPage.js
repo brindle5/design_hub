@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 
-import Artwork from "../../components/Artwork";
+import Artwork from "../../components/ArtworkAsset";
 import Upload from "../../assets/upload.png";
 
 

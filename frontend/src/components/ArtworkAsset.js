@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner } from "react-bootstrap";
 
 
-const Artwork = ({ spinner, src, message }) => {
+const ArtworkAsset = ({ spinner, src, message }) => {
   return (
     <div className="p-4">
       {spinner && <Spinner animation="border" />}
@@ -12,4 +12,4 @@ const Artwork = ({ spinner, src, message }) => {
   );
 };
 
-export default Artwork;
+export default ArtworkAsset;
