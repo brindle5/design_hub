@@ -7,14 +7,10 @@ import SignUpPage from './pages/auth/SignUpPage';
 import AddArtworkPage from './pages/artwork/AddArtworkPage';
 import SignInPage from './pages/auth/SignInPage';
 import ArtPiecePage from './pages/artwork/ArtPiecePage';
-import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ArtworkListPage from './pages/artwork/ArtworkListPage';
 
 
 function App() {
-  const currentUser = useCurrentUser();
-  const artist_id = currentUser?.artist_id || "";
-
   return (
 
     <div className="App">
