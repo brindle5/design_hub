@@ -24,8 +24,40 @@ The design hub is a website geared towards artists who want to find other artist
 - As a site user, I can edit a piece of artwork so that I can reach the best possible audience.
 - As a site user, I can delete a piece of artwork so that I can customise my profile for maximum benefit.
 
-
 ## Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+#### Homepage/Artwork List Page
+
+![Mobile homepage wireframe](documentation/mobile_homepage_wireframe.png)
+
+#### Add Artwork Page
+
+![Mobile add artwork page wireframe](documentation/mobile_add_artwork_page_wireframe.png)
+
+### Tablet Wireframes
+
+#### Homepage/Artwork List Page
+
+![Tablet homepage wireframe](documentation/tablet_homepage_wireframe.png)
+
+#### Add Artwork Page
+
+![Tablet add artwork page wireframe](documentation/tablet_add_artwork_page_wireframe.png)
+
+### Laptop Wireframes
+
+#### Homepage/Artwork List Page
+
+![Laptop homepage wireframe](documentation/laptop_homepage_wireframe.png)
+
+#### Add Artwork Page
+
+![Laptop add artwork page wireframe](documentation/laptop_add_artwork_page_wireframe.png)
 
 ## Features
 
