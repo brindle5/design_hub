@@ -14,14 +14,14 @@ class Artwork(models.Model):
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        null=True,
-        blank=True
+        null=False,
+        blank=False
     )
     art_image = CloudinaryField(
         'art image',
         folder='art images',
-        null=True,
-        blank=True
+        null=False,
+        blank=False
     )
     alt_text = models.CharField(
         max_length=250,
@@ -46,7 +46,7 @@ class Artwork(models.Model):
         verbose_name = 'Artwork'
 
     def __str__(self):
-        return self.name
+        return self.title
 
     @property
     def image_url(self):

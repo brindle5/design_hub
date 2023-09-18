@@ -19,10 +19,10 @@ function AddArtworkPage() {
   const [errors, setErrors] = useState({});
   const [artworkData, setArtworkData] = useState({
     title: "",
-    image: "",
+    art_image: "",
   });
   const history = useHistory();
-  const {title, image} = artworkData;
+  const {title, art_image} = artworkData;
   const imageInput = useRef(null);
 
   const handleAddTitle = (event) => {
@@ -34,10 +34,10 @@ function AddArtworkPage() {
 
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
-      URL.revokeObjectURL(image);
+      URL.revokeObjectURL(art_image);
       setArtworkData({
         ...artworkData,
-        image: URL.createObjectURL(event.target.files[0]),
+        art_image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -96,10 +96,10 @@ function AddArtworkPage() {
           >
             <Form.Group className="text-center artInputField">
 
-            {image ? (
+            {art_image ? (
                 <>
                   <figure>
-                    <Image src={image} rounded />
+                    <Image src={art_image} rounded />
                   </figure>
                   <div>
                     <Form.Label                      
@@ -124,7 +124,7 @@ function AddArtworkPage() {
                 ref={imageInput}
               />
             </Form.Group>
-            {errors?.image?.map((message, idx) => (
+            {errors?.art_image?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
