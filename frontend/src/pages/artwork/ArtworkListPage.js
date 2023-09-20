@@ -72,7 +72,7 @@ function ArtworkListPage({ message, filter = "" }) {
           <Container >
             <ArtworkAsset spinner />
           </Container>
-        )}
+        )}       
 
         <p>List of pieces here</p>
       </Col>

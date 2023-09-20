@@ -48,11 +48,6 @@ function ArtPiecePage() {
             </Row>
           </Container>
         ))}
-        <Container>
-
-      {/* Code for comment feature to appear here */}
-
-        </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
 

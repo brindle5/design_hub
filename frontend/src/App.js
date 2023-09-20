@@ -8,6 +8,7 @@ import AddArtworkPage from './pages/artwork/AddArtworkPage';
 import SignInPage from './pages/auth/SignInPage';
 import ArtPiecePage from './pages/artwork/ArtPiecePage';
 import ArtworkListPage from './pages/artwork/ArtworkListPage';
+import EditArtworkPage from './pages/artwork/EditArtworkPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpPage />} />     
           <Route exact path="/artwork/create" render={() => <AddArtworkPage />} />  
           <Route exact path="/artwork/:id" render={() => <ArtPiecePage />} />
+          <Route exact path="/artwork/:id/edit" render={() => <EditArtworkPage />} />
         </Switch>
       </Container>
     </div>

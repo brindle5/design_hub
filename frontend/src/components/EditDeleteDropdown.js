@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
 
-const Dropdown = React.forwardRef(({ onClick }, ref) => (
+const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-v"
     ref={ref}
@@ -16,7 +16,7 @@ const Dropdown = React.forwardRef(({ onClick }, ref) => (
 export const EditDeleteDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
-      <Dropdown.Toggle as={Dropdown} />
+      <Dropdown.Toggle as={DropdownMenu} />
 
       <Dropdown.Menu
         className="text-center"
