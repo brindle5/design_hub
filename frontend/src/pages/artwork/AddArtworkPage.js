@@ -45,7 +45,11 @@ function AddArtworkPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axiosReq.post("/artwork/", artworkData);
+      // convert image to upload to cloudinary
+      const formData = new FormData();
+      formData.append("art_image", imageInput.current.files[0]);
+      formData.append("title", title);
+      const { data } = await axiosReq.post("/artwork/", formData);    
       history.push(`/artwork/${data.id}`);
     } catch (err) {
       console.log(err);

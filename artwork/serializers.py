@@ -52,3 +52,7 @@ class ArtworkSerializer(serializers.ModelSerializer):
             'is_owner',
             'comments_count',
         ]
+
+    def to_representation(self, instance):
+        instance.art_image = instance.art_image.url
+        return super().to_representation(instance)

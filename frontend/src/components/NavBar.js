@@ -32,11 +32,10 @@ const NavBar = () => {
 
   const loggedInIcons = (
   <>
-    <NavLink className="iconLink"
+    {/* <NavLink className="iconLink"
     to={`/profiles/${currentUser?.artist_id}`}>
-      <i className="fa-solid fa-user">  </i>
-      Profile
-    </NavLink>
+      <i className="fa-solid fa-user"> </i>
+    </NavLink> */}
 
      <NavLink className="iconLink"
     exact to="/" onClick={handleSignOut}

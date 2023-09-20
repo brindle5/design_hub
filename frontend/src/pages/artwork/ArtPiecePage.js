@@ -30,9 +30,29 @@ function ArtPiecePage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {piece.results.map((piece) => (
+          <Container key={piece.id}>
+            <Row>
+              <Col>
+                <h1>{piece.title}</h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <img
+                  src={piece.art_image}
+                  alt={piece.title}
+                  className="img-fluid"
+                />
+              </Col>
+            </Row>
+          </Container>
+        ))}
+        <Container>
 
-        <p> Individual Art piece goes here</p>
-        <Container>Comments</Container>
+      {/* Code for comment feature to appear here */}
+
+        </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
 

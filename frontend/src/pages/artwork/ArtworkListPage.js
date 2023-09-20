@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-// import ArtPiecePage from "./ArtPiecePage";
-
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -44,7 +42,8 @@ function ArtworkListPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <Form          
+        <Form
+          className="artItemSearch"          
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control

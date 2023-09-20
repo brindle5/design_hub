@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Style(models.Model):
-    """A model for artists to select their art style 
+    """A model for artists to select their art style
         e.g. abstract, art deco, impressionism etc
     """
     name = models.CharField(
@@ -19,7 +19,7 @@ class Style(models.Model):
 
 
 class Medium(models.Model):
-    """ A model for artists to select their art medium 
+    """ A model for artists to select their art medium
         e.g. pottery, oil, sculpture etc
     """
     name = models.CharField(

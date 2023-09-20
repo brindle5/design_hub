@@ -64,8 +64,7 @@ DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    # '8000-brindle5-designhub-2qm4lz9cktg.ws-eu104.gitpod.io',
-    'localhost'
+    'localhost',
 ]
 
 # Application definition
@@ -107,15 +106,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-# if 'CLIENT_ORIGIN' in os.environ:
-#     CORS_ALLOWED_ORIGINS = [
-#         os.environ.get('CLIENT_ORIGIN')
-#     ]
-# else:
-#     CORS_ALLOWED_ORIGIN_REGEXES = [
-#         r"^https://.*\.gitpod\.io$",
-#     ]
 
 CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN')
