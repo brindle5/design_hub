@@ -51,7 +51,8 @@ function ArtworkListPage({ message, filter = "" }) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search for artists"
+            name="search"
+            placeholder="Search for: Gothic artists in NYC..."
           />
         </Form>
 
