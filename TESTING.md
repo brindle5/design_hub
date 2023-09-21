@@ -78,6 +78,27 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ![Python comments views validation screenshot](documentation/python_comments_views_validation_screenshot.png)
 
+#### Artists Collective Project
+
+- [Permissions.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/design_hub/main/artists_collective/permissions.py) | No errors
+
+![Python artists collective permissions validation screenshot](documentation/python_artists_collective_permissions_validation_screenshot.png)
+
+- [Serializers.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/design_hub/main/artists_collective/serializers.py) | No errors
+
+![Python artists collective serializers validation screenshot](documentation/python_artists_collective_serializers_validation_screenshot.png)
+
+- [Settings.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/design_hub/main/artists_collective/settings.py) | No errors
+
+![Python artists collective settings validation screenshot](documentation/python_artists_collective_settings_validation_screenshot.png)
+
+- [Urls.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/design_hub/main/artists_collective/urls.py) | No errors
+
+![Python artists collective urls validation screenshot](documentation/python_artists_collective_urls_validation_screenshot.png)
+
+- [Views.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/brindle5/design_hub/main/artists_collective/views.py) | No errors
+
+![Python artists collective views validation screenshot](documentation/python_artists_collective_views_validation_screenshot.png)
 
 ## Browser Compatibility
 
