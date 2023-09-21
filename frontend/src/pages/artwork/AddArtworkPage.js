@@ -1,9 +1,10 @@
+// Code based on CI Moments Project
+
+import React, { useState, useRef } from "react";
 import { useHistory} from "react-router-dom"; 
 import { axiosReq } from "../../api/axiosDefaults";
-import React, { useState, useRef } from "react";
 
 import { Alert } from "react-bootstrap";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";

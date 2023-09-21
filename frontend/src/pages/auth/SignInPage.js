@@ -1,13 +1,16 @@
+// Code based on CI's Moments Signin page
+
 import React, { useState} from "react";
-// import styles from '../styles/SignInUpForm.module.css';
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
+
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInPage() {

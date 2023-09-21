@@ -1,11 +1,11 @@
+// Code based on CI's Moments Signin page
+
 import React, {useState} from "react";
-// import styles from '../styles/SignInUpForm.module.css';
-import { Link } from "react-router-dom";
-import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 
-// Main layout of form taken from Code Institute's Moments Project
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({
