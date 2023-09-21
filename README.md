@@ -81,6 +81,15 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ### Future Features
 
+There are a number of features which could be added to the Design Hub on future iterations. This could include:
+-	The ability to comment on other’s artpieces
+-	The ability to like artwork
+-	The ability to follow artists
+-	A messaging feature
+-	A feed with suggested artists
+-	An expanded search feature
+-	A developed profile section where an artist can show a full portfolio of their work
+
 ## Tools & Technologies Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
@@ -110,6 +119,20 @@ Entity Relationship Diagrams (ERD) help to visualize database architecture befor
 ![Entity relationship diagram screenshot](documentation/entity_relationship_diagram.png)
 
 ## Reuseable Components
+
+There are a number of reusable React components within the project:
+
+### Navbar: 
+
+The Navbar component is used across all pages. When a user is not logged in, it provides sign in/sign up options. For logged in users, it provides the link to upload a piece of artwork and sign out of the site. Future iterations of the project will expand on this functionality: there will be links to a user’s profile page/account, their feed/suggested artists, as well as a chat/messaging feature.
+
+### Artwork Asset:
+
+The artwork asset is used on the homepage to display the art images. It is also used within the results of the search function to display a spinner. This feature could be used within an expanded search feature to search through user profiles and comments. In future iterations, this feature could be expanded to include searching by location, keyword tags, art styles, art mediums, and key words within a chat/messaging feature.
+
+### EditDeleteDropdown:
+
+This component has been used to enable a logged in user to edit or delete their art image. This component could be expanded to include further options (for owners and non owners) of the images such as share to external social media sites, save to a ‘favourites’ folder or moderate privacy settings (e.g. make a particular art image visible or invisible to selected other site users). The component could also be applied to a comment or messaging feature. 
 
 ## Agile Development Process
 
@@ -293,13 +316,19 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-
 ### Local VS Deployment
 
 ## Credits
 
 ### Content
 
+- Much of my code is based on the Code Institute [Moments](https://github.com/Code-Institute-Solutions/moments) and [Django REST](https://github.com/Code-Institute-Solutions/drf-api) walkthrough projects.
+- I used Tim Nelson’s Markdown builder for the [readme and testing documentation](https://traveltimn.github.io/markdown-builder/).
+
 ### Media
 
 ### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Julia Konovalova](https://github.com/IuliiaKonovalova) for her invaluable support and guidance.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I’d like to thank my family and friends for supporting me through the challenges of this project.

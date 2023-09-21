@@ -1,3 +1,5 @@
+// ClickOutsideToggle code taken from Code Institute's Moments walkthrough project
+
 import { useEffect, useRef, useState } from "react";
 
 const useClickOutsideToggle = () => {

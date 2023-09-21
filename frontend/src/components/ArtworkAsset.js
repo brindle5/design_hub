@@ -1,3 +1,5 @@
+// Code for artwork asset is based on CI's Moments Project
+
 import React from "react";
 import { Spinner } from "react-bootstrap";
 

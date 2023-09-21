@@ -1,3 +1,5 @@
+// Code for navbar is based on CI's Moments Project
+
 import React from 'react'
 import axios from 'axios';
 
