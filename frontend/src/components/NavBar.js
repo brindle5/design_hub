@@ -32,10 +32,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
   <>
-    {/* <NavLink className="iconLink"
-    to={`/profiles/${currentUser?.artist_id}`}>
-      <i className="fa-solid fa-user"> </i>
-    </NavLink> */}
 
      <NavLink className="iconLink"
     exact to="/" onClick={handleSignOut}
@@ -66,7 +62,7 @@ const NavBar = () => {
  
     <Navbar fixed="top" expand="md" expanded={expanded}>
     <Container>
-  <Navbar.Brand></Navbar.Brand>
+
   {currentUser && addArtworkIcon}
   <Navbar.Toggle 
     aria-controls="basic-navbar-nav" 
@@ -74,6 +70,8 @@ const NavBar = () => {
     ref={ref} />
 
   <Navbar.Collapse id="basic-navbar-nav">
+
+  <Navbar.Brand className='header'>Design Hub: where artists connect with artists</Navbar.Brand>
 
     <Nav className= "ml-auto text-left">
 

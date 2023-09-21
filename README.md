@@ -6,6 +6,10 @@ The design hub is a website geared towards artists who want to find other artist
 
 ### Colour Scheme
 
+I used #F8F4E3 (Cosmic Latte) as my background colour, #40434E (Charcoal) for the header and #F77F00 (Orange – Wheel) for my icons. I used [coolors.co](https://coolors.co/palette/f8f4e3-f77f00-40434e)to generate my colour palette.
+
+![Coolers colour scheme](documentation/coolers_colour_scheme.png)
+
 ### Typography
 
 - [Open Sans]( https://fonts.google.com/specimen/Open+Sans) from Google Fonts were used for the site.
