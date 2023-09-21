@@ -39,6 +39,8 @@ const ArtPiece = (props) => {
           <Link to={`/artists/${id}`}>
             {owner}
           </Link>
+
+          
           <div className="d-flex align-items-center">
             <span>{edited_date}</span>
             {is_owner && ArtPiecePage && (
@@ -48,6 +50,8 @@ const ArtPiece = (props) => {
               />
             )}
           </div>
+
+
         </Media>
       </Card.Body>
       <Link to={`/artwork/${id}`}>
