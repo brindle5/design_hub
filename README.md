@@ -1,6 +1,6 @@
 # Design Hub
 
-The design hub is a website geared towards artists who want to find other artists to collaborate with. Artists can create a profile and choose which styles and mediums they like to work in, as well as upload samples of their work to an online portfolio. In turn they can also view other artists’ work to see if their styles are compatible.
+The design hub is a website geared towards artists who want to find other artists to collaborate with. Artists can create a profile and choose which styles and mediums they like to work in, as well as upload samples of their work to an online portfolio. In turn they can also view other artists’ work to see if their styles are compatible. 
 
 ## UX
 
