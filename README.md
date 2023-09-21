@@ -43,6 +43,10 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ![Mobile add artwork page wireframe](documentation/mobile_add_artwork_page_wireframe.png)
 
+#### Edit Artwork Page
+
+![Mobile edit artwork page wireframe](documentation/mobile_edit_artwork_page_wireframe.png)
+
 ### Tablet Wireframes
 
 #### Homepage/Artwork List Page
@@ -53,6 +57,10 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ![Tablet add artwork page wireframe](documentation/tablet_add_artwork_page_wireframe.png)
 
+#### Edit Artwork Page
+
+![Tablet edit artwork page wireframe](documentation/tablet_edit_artwork_page_wireframe.png)
+
 ### Laptop Wireframes
 
 #### Homepage/Artwork List Page
@@ -62,6 +70,10 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 #### Add Artwork Page
 
 ![Laptop add artwork page wireframe](documentation/laptop_add_artwork_page_wireframe.png)
+
+#### Edit Artwork Page
+
+![Laptop edit artwork page wireframe](documentation/laptop_edit_artwork_page_wireframe.png)
 
 ## Features
 
