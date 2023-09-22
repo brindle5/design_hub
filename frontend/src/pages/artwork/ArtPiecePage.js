@@ -1,6 +1,5 @@
 // Code based on CI Moments Project
 
-import { useParams } from "react-router";
 import React, { useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 
@@ -13,8 +12,8 @@ import { useHistory } from "react-router-dom";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 
 
-function ArtPiecePage() {
-  const { id } = useParams();
+function ArtPiecePage(props) {
+  const { id } = props();
   const [piece, setPiece] = useState({ results: [] });
 
   // const {
