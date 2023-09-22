@@ -32,8 +32,9 @@ function EditArtworkPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/artwork/${id}/`);
+        const { data } = await axiosReq.get(`/artwork/${id}`);
         const { title, art_image, is_owner } = data;
+        setArtworkData({ title, art_image})
 
         is_owner ? setArtworkData({ title, art_image }) : history.push("/");
       } catch (err) {
@@ -83,23 +84,23 @@ function EditArtworkPage() {
 
   const textFields = (
     <div className="text-center artInputField">
-    <Form.Group className="mb-3" controlId="title">
+      <Form.Group className="mb-3" controlId="title">
         <Form.Label className="d-none">Artwork Title</Form.Label>
-        <Form.Control 
-          type="text" 
-          placeholder="Artwork Title"
-          value={title}
-          onChange={handleAddTitle}
-          name="title" 
-          />
-        <Form.Text className="text-muted">          
-        </Form.Text>
+           <Form.Control 
+              type="text" 
+              placeholder="Artwork Title"
+              value={title}
+              onChange={handleAddTitle}
+              name="title" 
+              />
+            <Form.Text className="text-muted">          
+            </Form.Text>
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+        {errors?.title?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+                  {message}
+            </Alert>
+         ))}
 
       <Button type="submit" variant="success">
         Save changes
@@ -118,8 +119,7 @@ function EditArtworkPage() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
-            className='d-flex flex-column justify-content-center'
-          >
+            className='d-flex flex-column justify-content-center'>
             <Form.Group className="text-center artInputField">
                   <figure>
                     <Image src={art_image} rounded />
@@ -137,17 +137,17 @@ function EditArtworkPage() {
                 </Form.Label>
                 
                 <Form.File
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage}
-                ref={imageInput}
-              />
+                  id="image-upload"
+                  accept="image/*"
+                  onChange={handleChangeImage}
+                  ref={imageInput}
+                />
             </Form.Group>
-            {errors?.art_image?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
+                {errors?.art_image?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>

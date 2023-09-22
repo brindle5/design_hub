@@ -16,31 +16,22 @@ function ArtPiecePage(props) {
   const { id } = props();
   const [piece, setPiece] = useState({ results: [] });
 
-  // const {
-  //   // id,
-  //   owner,
-  //   title,
-  //   art_image,
-  //   edited_date,
-  //   ArtPiecePage,
-  // } = props;
+  const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner;
+  const history = useHistory();
 
-  // const currentUser = useCurrentUser();
-  // const is_owner = currentUser?.username === owner;
-  // const history = useHistory();
+  const handleEdit = () => {
+    history.push(`/artwork/${id}/edit`);
+  };
 
-  // const handleEdit = () => {
-  //   history.push(`/artwork/${id}/edit`);
-  // };
-
-  // const handleDelete = async () => {
-  //   try {
-  //     await axiosRes.delete(`/artwork/${id}/`);
-  //     history.goBack();
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/artwork/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     const handleMount = async () => {
@@ -61,17 +52,14 @@ function ArtPiecePage(props) {
   return (
     <Row className="h-100">
 
-{/* <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center">
             <span>{edited_date}</span>
-            {is_owner && ArtPiecePage && (
+                {is_owner && ArtPiecePage && (
               <EditDeleteDropdown
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
-              />
+                handleDelete={handleDelete}/>
             )}
-          </div> */}
-
-
+        </div>
 
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {piece.results.map((piece) => (
@@ -94,7 +82,6 @@ function ArtPiecePage(props) {
         ))}
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-
       </Col>
     </Row>
   );

@@ -46,8 +46,7 @@ function ArtworkListPage({ message, filter = "" }) {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <Form
           className="artItemSearch"          
-          onSubmit={(event) => event.preventDefault()}
-        >
+          onSubmit={(event) => event.preventDefault()}>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -79,7 +78,6 @@ function ArtworkListPage({ message, filter = "" }) {
         <p>List of pieces here</p>
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-
       </Col>
     </Row>
   );
