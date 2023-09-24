@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 import SignUpPage from './pages/auth/SignUpPage';
 import AddArtworkPage from './pages/artwork/AddArtworkPage';
 import SignInPage from './pages/auth/SignInPage';
-// import ArtPiecePage from './pages/artwork/ArtPiecePage';
+import ArtPiecePage from './pages/artwork/ArtPiecePage';
 import ArtworkListPage from './pages/artwork/ArtworkListPage';
 import EditArtworkPage from './pages/artwork/EditArtworkPage';
 
@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInPage />} />
           <Route exact path="/signup" render={() => <SignUpPage />} />     
           <Route exact path="/artwork/create" render={() => <AddArtworkPage />} />  
-          {/* <Route exact path="/artwork/:id" render={() => <ArtPiecePage />} /> */}
+          <Route exact path="/artwork/:id" render={() => <ArtPiecePage />} />
           <Route exact path="/artwork/:id/edit" render={() => <EditArtworkPage />} />
         </Switch>
       </Container>
