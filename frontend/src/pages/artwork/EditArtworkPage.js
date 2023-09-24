@@ -103,16 +103,6 @@ function EditArtworkPage() {
                   {message}
             </Alert>
          ))}
-
-      <Button type="submit" variant="success">
-        Save changes
-      </Button>
-      <Button
-        variant="danger"
-        onClick={() => history.goBack()}
-        >
-        Cancel
-      </Button>
     </div>
   );
 
@@ -155,7 +145,18 @@ function EditArtworkPage() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container>{textFields}</Container>
+          <Container>
+            <Button 
+              type="submit" 
+              variant="success">
+              Save changes
+            </Button>
+            <Button
+              variant="danger"
+              onClick={() => history.goBack()}>
+              Cancel
+            </Button>
+          </Container>          
         </Col>
       </Row>
     </Form>
