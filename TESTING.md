@@ -20,6 +20,52 @@ Add Artwork Page | No errors
 
 ### JavaScript
 
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+#### API
+
+axiosDefaults.js | No errors
+
+![JS axios defaults validation screenshot](documentation/js_axiosdefaults_validation_screenshot.png)
+
+#### Components
+
+ArtworkAsset.js | Few errors
+
+![JS artwork asset validation screenshot](documentation/js_artworkasset_validation_screenshot.png)
+
+EditDeleteDropdown.js | Some errors
+
+![JS edit delete dropdown validation screenshot](documentation/js_editdeletedropdown_validation_screenshot.png)
+
+NavBar.js | Few errors
+
+![JS navbar validation screenshot](documentation/js_navbar_validation_screenshot.png)
+
+#### Contexts
+
+CurrentUserContext.js | Few errors
+
+![JS contexts validation screenshot](documentation/js_contexts_validation_screenshot.png)
+
+#### Hooks
+
+useClickOutsideToggle.js | Pass
+
+![JS hooks validation screenshot](documentation/js_hooks_validation_screenshot.png)
+
+#### Pages
+
+##### Auth
+
+SignUpPage.js | Few errors
+
+![JS sign up page validation screenshot](documentation/js_sign_up_page_validation_screenshot.png)
+
+SignInPage.js | Few errors
+
+![JS sign in page validation screenshot](documentation/js_sign_in_page_validation_screenshot.png)
+
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
