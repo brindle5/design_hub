@@ -110,16 +110,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## User Story Testing
 
-## Automated Testing
-
-### JavaScript (Jest Testing)
-
-#### Jest Test Issues
-
-### Python (Unit Testing)
-
-#### Unit Test Issues
-
 ## Bugs
 
 ### GitHub **Issues**

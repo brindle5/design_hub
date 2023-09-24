@@ -1,5 +1,7 @@
 // Context code taken from Code Institute's Moments walkthrough project
 
+// jshint esversion: 11, jquery: true
+
 import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import { axiosRes, axiosReq } from "../api/axiosDefaults";

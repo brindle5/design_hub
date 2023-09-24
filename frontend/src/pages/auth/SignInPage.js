@@ -1,5 +1,7 @@
 // Code based on CI's Moments Signin page
 
+// jshint esversion: 11, jquery: true
+
 import React, { useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -19,7 +21,7 @@ function SignInPage() {
     const [signInData, setSignInData] = useState({
         username: "",
         password: "",
-      })
+      });
     
     const { username, password } = signInData;
     const [errors, setErrors] = useState({});
@@ -36,15 +38,15 @@ function SignInPage() {
         try {
           const {data} = await axios.post('/dj-rest-auth/login/', signInData);
           setCurrentUser(data.user);
-          history.push('/')
+          history.push('/');
         } catch (err) {
-          setErrors(err.response?.data)
+          setErrors(err.response?.data);
          }
       };
 
 
   return (
-    <Row>
+    <Row className="box">
       <Col className="my-auto p-0 p-md-2">
         <Container className="p-4">
           <h3>Already got an account? Sign In</h3>

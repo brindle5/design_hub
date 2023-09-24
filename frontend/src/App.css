@@ -17,6 +17,12 @@
   color: #40434E;
 }
 
+/* Styling for signin/signup */
+
+.box {
+  padding-top: 6rem;
+}
+
 /* Styling for nav links */
 
 .iconLink {

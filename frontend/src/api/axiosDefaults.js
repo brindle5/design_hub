@@ -5,6 +5,8 @@
 
  // Setting a baseURL before you reach deployment will cause errors
 
+ /* jshint esversion: 11, jquery: true */
+
  import axios from 'axios';
 
  axios.defaults.baseURL = '/api';
@@ -13,3 +15,4 @@
 
  export const axiosReq = axios.create();
  export const axiosRes = axios.create();
+ 

@@ -1,4 +1,6 @@
-// Code based on CI's Moments Signin page
+// Code based on CI's Moments Signup page
+
+// jshint esversion: 11, jquery: true
 
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -30,13 +32,13 @@ const SignUpPage = () => {
       await axios.post('/dj-rest-auth/registration/', signUpData);
       history.push('/signin');
     } catch (err) {
-      console.log(err.response)
+      console.log(err.response);
       setErrors(err.response?.data);
      }
   };
 
   return (
-    <Row >
+    <Row className="box">
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className= "p-4" >
           <h3>Sign up for an account!</h3>

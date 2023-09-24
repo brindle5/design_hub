@@ -34,7 +34,7 @@ function EditArtworkPage() {
       try {
         const { data } = await axiosReq.get(`/artwork/${id}`);
         const { title, art_image, is_owner } = data;
-        setArtworkData({ title, art_image})
+        setArtworkData({ title, art_image });
 
         is_owner ? setArtworkData({ title, art_image }) : history.push("/");
       } catch (err) {

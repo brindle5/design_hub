@@ -1,5 +1,7 @@
 // Code for edit/delete dropdown is based on CI's Moments Project
 
+// jshint esversion: 11, jquery: true
+
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 

@@ -1,6 +1,8 @@
 // Code for navbar is based on CI's Moments Project
 
-import React from 'react'
+// jshint esversion: 11, jquery: true
+
+import React from 'react';
 import axios from 'axios';
 
 import {Navbar, Nav, Container } from 'react-bootstrap';

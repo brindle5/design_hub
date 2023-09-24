@@ -1,4 +1,6 @@
-// ClickOutsideToggle code taken from Code Institute's Moments walkthrough project
+// \useClickOutsideToggle code taken from Code Institute's Moments walkthrough project
+
+// jshint esversion: 11, jquery: true
 
 import { useEffect, useRef, useState } from "react";
 
