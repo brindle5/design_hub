@@ -1,5 +1,7 @@
 // Code based on CI Moments Project
 
+// jshint esversion: 11, jquery: true
+
 import React, { useState, useRef } from "react";
 import { useHistory} from "react-router-dom"; 
 import { axiosReq } from "../../api/axiosDefaults";
@@ -123,6 +125,7 @@ function AddArtworkPage() {
                 </Form.Label>
               )}
                 <Form.File
+                className="d-none"
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}

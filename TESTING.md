@@ -24,17 +24,17 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 #### API
 
-axiosDefaults.js | No errors
+axiosDefaults.js | Pass
 
 ![JS axios defaults validation screenshot](documentation/js_axiosdefaults_validation_screenshot.png)
 
 #### Components
 
-ArtworkAsset.js | Few errors
+ArtworkAsset.js | Few warnings
 
 ![JS artwork asset validation screenshot](documentation/js_artworkasset_validation_screenshot.png)
 
-EditDeleteDropdown.js | Some errors
+EditDeleteDropdown.js | Some warnings
 
 ![JS edit delete dropdown validation screenshot](documentation/js_editdeletedropdown_validation_screenshot.png)
 
@@ -44,7 +44,7 @@ NavBar.js | Few errors
 
 #### Contexts
 
-CurrentUserContext.js | Few errors
+CurrentUserContext.js | Few warnings
 
 ![JS contexts validation screenshot](documentation/js_contexts_validation_screenshot.png)
 
@@ -58,13 +58,31 @@ useClickOutsideToggle.js | Pass
 
 ##### Auth
 
-SignUpPage.js | Few errors
+SignUpPage.js | Few warnings
 
 ![JS sign up page validation screenshot](documentation/js_sign_up_page_validation_screenshot.png)
 
-SignInPage.js | Few errors
+SignInPage.js | Few warnings
 
 ![JS sign in page validation screenshot](documentation/js_sign_in_page_validation_screenshot.png)
+
+##### Artwork
+
+ArtworkListPage.js | Few warnings
+
+![JS artwork list page validation screenshot](documentation/js_artworklist_page_validation_screenshot.png)
+
+AddArtworkPage.js | Few warnings
+
+![JS add artwork page validation screenshot](documentation/js_addartwork_page_validation_screenshot.png)
+
+EditArtworkPage.js | Few warnings
+
+![JS edit artwork page validation screenshot](documentation/js_editartwork_page_validation_screenshot.png)
+
+ArtPiecePage.js | Few warnings
+
+![JS art piece page validation screenshot](documentation/js_artpiece_page_validation_screenshot.png)
 
 ### Python
 
