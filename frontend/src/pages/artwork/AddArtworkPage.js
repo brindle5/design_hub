@@ -81,16 +81,6 @@ function AddArtworkPage() {
           {message}
         </Alert>
       ))}
-
-      <Button type="submit" variant="success">
-        Add artwork
-      </Button>
-      <Button
-        variant="danger"
-        onClick={() => history.goBack()}
-        >
-        Cancel
-      </Button>
     </div>
   );
 
@@ -110,8 +100,7 @@ function AddArtworkPage() {
                   </figure>
                   <div>
                     <Form.Label                      
-                      htmlFor="image-upload"
-                    >
+                      htmlFor="image-upload">
                       Change the image
                     </Form.Label>
                   </div>
@@ -121,7 +110,11 @@ function AddArtworkPage() {
                   className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                   <Artwork src={Upload} message='Click to upload a piece of artwork' />
+                   <Artwork 
+                    src={Upload} 
+                    message='Click to upload a piece of artwork'
+                    className="uploadImage"
+                     />
                 </Form.Label>
               )}
                 <Form.File
@@ -141,7 +134,18 @@ function AddArtworkPage() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container>{textFields}</Container>
+          <Container>            
+                <Button 
+                  type="submit" 
+                  variant="success">
+                  Add artwork
+                </Button>
+                <Button
+                  variant="danger"
+                  onClick={() => history.goBack()}>
+                  Cancel
+              </Button>
+          </Container>
         </Col>
       </Row>
     </Form>

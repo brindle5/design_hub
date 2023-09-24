@@ -30,6 +30,12 @@
   color: #F77F00;
 }
 
+.iconLink a:visited, .iconLink a:hover, .iconLink a{
+  text-decoration: none;
+  padding: 1rem;
+  color: #40434E;
+}
+
 /* Styling for add artwork fields */
 
 .artInputField {
@@ -41,3 +47,4 @@
 .artItemSearch {
   padding-top: 6rem;
 }
+

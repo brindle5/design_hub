@@ -30,7 +30,7 @@ const NavBar = () => {
     <NavLink className="iconLink"
     exact to="/artwork/create">
       <i className="fa-solid fa-upload">  </i>
-       Add Artwork
+      Add Artwork
       </NavLink>
   )
 
@@ -38,8 +38,7 @@ const NavBar = () => {
   <>
 
      <NavLink className="iconLink"
-    exact to="/" onClick={handleSignOut}
-    >
+    exact to="/" onClick={handleSignOut}>
       <i className="fas fa-right-from-bracket">  </i>
        Sign Out
       </NavLink>   
@@ -84,7 +83,6 @@ const NavBar = () => {
     {currentUser ? loggedInIcons : loggedOutIcons}
     </Nav>
   </Navbar.Collapse>
-  
   </Container>
     </Navbar>
 
