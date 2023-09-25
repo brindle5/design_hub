@@ -174,6 +174,24 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## User Story Testing
 
+All of my site's features fulfil the needs set out in my user stories:
+
+- As a site user, I can create an account so that other artists can find and contact me.
+
+![Sign up screenshot](documentation/features_signup_screenshot.png)
+
+- As a site user, I can add a piece of artwork so that other artists can see my style and medium.
+
+![Add artwork screenshot](documentation/features_addartwork_screenshot.png)
+
+- As a site user, I can edit a piece of artwork so that I can reach the best possible audience.
+
+![Edit artwork page screenshot](documentation/features_editartwork_screenshot.png)
+
+- As a site user, I can search for other artists so that I can find someone with the same interests.
+
+![Search bar screenshot](documentation/features_searchbar_screenshot.png)
+
 ## Bugs
 
 ### GitHub **Issues**
