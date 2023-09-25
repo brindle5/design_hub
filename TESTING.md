@@ -172,7 +172,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-### Chrome: works as expected
+**Chrome:** works as expected
 
 ![Chrome homepage screenshot](documentation/features_homepage_screenshot.png)
 
@@ -180,7 +180,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ![Chrome edit artwork screenshot](documentation/features_editartwork_screenshot.png)
 
-### Edge: works as expected
+**Edge:** works as expected
 
 ![Edge homepage screenshot](documentation/edge_homepage_screenshot.png)
 
@@ -188,7 +188,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ![Edge edit artwork screenshot](documentation/edge_editartwork_screenshot.png)
 
-### Firefox: works as expected
+**Firefox:** works as expected
 
 ![Firefox homepage screenshot](documentation/firefox_homepage_screenshot.png)
 
@@ -199,6 +199,20 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 ## Responsiveness
 
 ## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+**Artwork List Page:**
+
+![Homepage lighthouse report](documentation/lighthouse_homepage_screenshot.png)
+
+**Add Artwork Page:**
+
+![Add artwork lighthouse report](documentation/lighthouse_addartwork_screenshot.png)
+
+**Edit Artwork Page:**
+
+![Edit artwork lighthouse report](documentation/lighthouse_editartwork_screenshot.png)
 
 ## Defensive Programming
 
