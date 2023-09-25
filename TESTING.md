@@ -18,6 +18,10 @@ Add Artwork Page | No errors
 
 ### CSS
 
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate  my [CSS file](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdesign-hub-af7f99885c3f.herokuapp.com) | Pass
+
+![CSS validation screenshot](documentation/css_validation_screenshot.png)
+
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
@@ -165,6 +169,12 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 ![Python artists collective views validation screenshot](documentation/python_artists_collective_views_validation_screenshot.png)
 
 ## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+### Chrome 
+
+Works as expected
 
 ## Responsiveness
 
