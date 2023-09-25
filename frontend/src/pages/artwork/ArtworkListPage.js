@@ -55,7 +55,7 @@ function ArtworkListPage({ message, filter = "" }) {
             type="text"
             className="mr-sm-2"
             name="search"
-            placeholder="Search for: Gothic artists in NYC..."
+            placeholder="Search for: Gothic artists in London..."
           />
         </Form>
 
@@ -66,18 +66,16 @@ function ArtworkListPage({ message, filter = "" }) {
                 <ArtPiecePage key={piece.id} {...piece} />
               ))
             ) : (
-              <Container >
+              <Container className="display">
                 <ArtworkAsset src={NoResults} message={message} />
               </Container>
             )}
           </>
         ) : (
-          <Container >
+          <Container className="display" >
             <ArtworkAsset spinner />
           </Container>
         )}       
-
-        <p>List of pieces here</p>
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
       </Col>

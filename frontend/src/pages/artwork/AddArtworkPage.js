@@ -81,6 +81,16 @@ function AddArtworkPage() {
           {message}
         </Alert>
       ))}
+          <Button 
+            type="submit" 
+            variant="success">
+            Add artwork
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => history.goBack()}>
+            Cancel
+          </Button>
     </div>
   );
 
@@ -134,18 +144,7 @@ function AddArtworkPage() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container>            
-                <Button 
-                  type="submit" 
-                  variant="success">
-                  Add artwork
-                </Button>
-                <Button
-                  variant="danger"
-                  onClick={() => history.goBack()}>
-                  Cancel
-              </Button>
-          </Container>
+          <Container>{textFields}</Container>
         </Col>
       </Row>
     </Form>

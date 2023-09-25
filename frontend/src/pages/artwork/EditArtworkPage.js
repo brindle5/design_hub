@@ -97,12 +97,22 @@ function EditArtworkPage() {
               />
             <Form.Text className="text-muted">          
             </Form.Text>
-      </Form.Group>
+      </Form.Group> 
         {errors?.title?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
                   {message}
             </Alert>
          ))}
+          <Button 
+              type="submit" 
+              variant="success">
+              Save changes
+          </Button>
+          <Button
+              variant="danger"
+              onClick={() => history.goBack()}>
+              Cancel
+            </Button>
     </div>
   );
 
@@ -121,13 +131,7 @@ function EditArtworkPage() {
                       htmlFor="image-upload">
                       Change the image
                     </Form.Label>
-                  </div>
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload">
-                   <Artwork src={Upload} message='Click to upload a piece of artwork' />
-                </Form.Label>
-                
+                  </div>                
                 <Form.File
                 className="d-none"
                   id="image-upload"
@@ -146,16 +150,7 @@ function EditArtworkPage() {
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
           <Container>
-            <Button 
-              type="submit" 
-              variant="success">
-              Save changes
-            </Button>
-            <Button
-              variant="danger"
-              onClick={() => history.goBack()}>
-              Cancel
-            </Button>
+                {textFields}
           </Container>          
         </Col>
       </Row>

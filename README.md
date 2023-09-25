@@ -79,6 +79,30 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ### Existing Features
 
+#### ArtworkList/Homepage
+
+On this page, users can see art pieces uploaded by other users and browse through the timeline.
+
+![Homepage screenshot](documentation/features_homepage_screenshot.png)
+
+#### Add Artwork Page
+
+Users can upload their own art pieces and a title to their online portfolio.
+
+![Add artwork page screenshot](documentation/features_addartwork_screenshot.png)
+
+#### Edit Artwork Page
+
+Artists can edit their pieces by changing the photo or title.
+
+![Edit artwork page screenshot](documentation/features_editartwork_screenshot.png)
+
+#### Search Bar
+
+Users can search by title or username.
+
+![Search bar screenshot](documentation/features_searchbar_screenshot.png)
+
 ### Future Features
 
 There are a number of features which could be added to the Design Hub on future iterations. This could include:
