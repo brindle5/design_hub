@@ -172,9 +172,29 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-### Chrome 
+### Chrome: works as expected
 
-Works as expected
+![Chrome homepage screenshot](documentation/features_homepage_screenshot.png)
+
+![Chrome add artwork screenshot](documentation/features_addartwork_screenshot.png)
+
+![Chrome edit artwork screenshot](documentation/features_editartwork_screenshot.png)
+
+### Edge: works as expected
+
+![Edge homepage screenshot](documentation/edge_homepage_screenshot.png)
+
+![Edge add artwork screenshot](documentation/edge_addartwork_screenshot.png)
+
+![Edge edit artwork screenshot](documentation/edge_editartwork_screenshot.png)
+
+### Firefox: works as expected
+
+![Firefox homepage screenshot](documentation/firefox_homepage_screenshot.png)
+
+![Firefox add artwork screenshot](documentation/firefox_addartwork_screenshot.png)
+
+![Firefox edit artwork screenshot](documentation/firefox_editartwork_screenshot.png)
 
 ## Responsiveness
 
@@ -204,10 +224,10 @@ All of my site's features fulfil the needs set out in my user stories:
 
 ## Bugs
 
-### GitHub **Issues**
-
 **Fixed Bugs**
 
-**Open Issues**
+#### Migrations not being applied
+
+One of the main bugs was changes to the models not being successfully migrated into the database. I fixed this by deleting the migrations files within each app, deleting the db.sqlite3 database and resetting the elephantsql database. Once I had done this I ran ‘python manage.py makemigrations’ and ‘python manage.py migrate’ and the problem was resolved.
 
 ## Unfixed Bugs
