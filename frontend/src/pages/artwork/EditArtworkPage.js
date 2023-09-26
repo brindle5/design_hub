@@ -72,9 +72,7 @@ function EditArtworkPage() {
     // Check if imageInput.current exists and has files
     if (hasNewImage) {
       formData.append("art_image", artImageFile, artImageFile.name);
-    } else {
-      formData.append("art_image", art_image); // Use the existing image data
-    }
+    } 
 
     formData.append("title", title);
 
