@@ -1,8 +1,4 @@
-// Code based on CI Moments Project
-
-// jshint esversion: 11, jquery: true
-
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams} from "react-router-dom"; 
 import { axiosReq } from "../../api/axiosDefaults";
 import React, { useState, useRef, useEffect } from "react";
 
@@ -15,7 +11,9 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 
-// Import statements...
+import Artwork from "../../components/ArtworkAsset";
+import Upload from "../../assets/upload.png";
+
 
 function EditArtworkPage() {
   const [errors, setErrors] = useState({});
@@ -23,19 +21,17 @@ function EditArtworkPage() {
     title: "",
     art_image: "",
   });
-  const [artImageFile, setArtImageFile] = useState(null); // New state variable
-  const [hasNewImage, setHasNewImage] = useState(false); // New state variable
   const history = useHistory();
-  const { title, art_image } = artworkData;
+  const {title, art_image} = artworkData;
   const imageInput = useRef(null);
   const { id } = useParams();
+
 
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/artwork/${id}`);
+        const { data } = await axiosReq.get(`/artwork/${id}/`);
         const { title, art_image, is_owner } = data;
-        setArtworkData({ title, art_image });
 
         is_owner ? setArtworkData({ title, art_image }) : history.push("/");
       } catch (err) {
@@ -46,6 +42,7 @@ function EditArtworkPage() {
     handleMount();
   }, [history, id]);
 
+
   const handleAddTitle = (event) => {
     setArtworkData({
       ...artworkData,
@@ -55,12 +52,10 @@ function EditArtworkPage() {
 
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
-      const selectedFile = event.target.files[0];
-      setArtImageFile(selectedFile);
-      setHasNewImage(true); // Set to true when a new image is selected
+      URL.revokeObjectURL(art_image);
       setArtworkData({
         ...artworkData,
-        art_image: URL.createObjectURL(selectedFile),
+        art_image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -68,16 +63,13 @@ function EditArtworkPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-
-    // Check if imageInput.current exists and has files
-    if (hasNewImage) {
-      formData.append("art_image", artImageFile, artImageFile.name);
-    } 
-
+    formData.append("art_image", imageInput.current.files[0]);
     formData.append("title", title);
-
+    if (imageInput?.current?.files[0]) {
+      formData.append("art_image", imageInput.current.files[0]);
+    }
     try {
-      const { data } = await axiosReq.put(`/artwork/${id}/`, formData); // Use the correct URL
+      const { data } = await axiosReq.put("/artwork/", formData);    
       history.push(`/artwork/${data.id}`);
     } catch (err) {
       console.log(err);
@@ -89,17 +81,80 @@ function EditArtworkPage() {
 
   const textFields = (
     <div className="text-center artInputField">
-      {/* Rest of your JSX code... */}
+    <Form.Group className="mb-3" controlId="title">
+        <Form.Label className="d-none">Artwork Title</Form.Label>
+        <Form.Control 
+          type="text" 
+          placeholder="Artwork Title"
+          value={title}
+          onChange={handleAddTitle}
+          name="title" 
+          />
+        <Form.Text className="text-muted">          
+        </Form.Text>
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Button type="submit" variant="success">
+        Save changes
+      </Button>
+      <Button
+        variant="danger"
+        onClick={() => history.goBack()}
+        >
+        Cancel
+      </Button>
     </div>
   );
 
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        {/* Rest of your JSX code... */}
+        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+          <Container
+            className='d-flex flex-column justify-content-center'
+          >
+            <Form.Group className="text-center artInputField">
+                  <figure>
+                    <Image src={art_image} rounded />
+                  </figure>
+                  <div>
+                    <Form.Label                      
+                      htmlFor="image-upload">
+                      Change the image
+                    </Form.Label>
+                  </div>
+                <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="image-upload">
+                   <Artwork src={Upload} message='Click to upload a piece of artwork' />
+                </Form.Label>
+
+                <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+                ref={imageInput}
+              />
+            </Form.Group>
+            {errors?.art_image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+            <div className="d-md-none">{textFields}</div>
+          </Container>
+        </Col>
+        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+          <Container>{textFields}</Container>
+        </Col>
       </Row>
     </Form>
   );
 }
 
-export default EditArtworkPage;
+export default EditArtworkPage

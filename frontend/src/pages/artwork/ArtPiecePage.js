@@ -12,23 +12,27 @@ import Container from "react-bootstrap/Container";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function ArtPiecePage(props) {
   const { id, owner } = props;
   const [piece, setPiece] = useState({ results: [] });
+  const idBackup = useParams();
+  console.log(id);
+  console.log(idBackup);
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/artwork/${id}/edit`);
+    history.push(`/artwork/${id||idBackup.id}/edit`);
   };
 
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/artwork/${id}/`);
+      await axiosRes.delete(`/artwork/${id||idBackup.id}/`);
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -39,10 +43,10 @@ function ArtPiecePage(props) {
     const handleMount = async () => {
       try {
         const [{ data: piece }] = await Promise.all([
-          axiosReq.get(`/artwork/${id}`),
+          axiosReq.get(`/artwork/${id||idBackup.id}`),
         ]);
         setPiece({ results: [piece] });
-        console.log(piece);
+        // console.log(piece);
       } catch (err) {
         console.log(err);
       }
@@ -67,7 +71,8 @@ function ArtPiecePage(props) {
           <Container key={piece.id}>
             <Row>
               <Col>
-                <h1>{piece.title} {piece.owner}</h1>                
+                <h1>{piece.title} {piece.owner}</h1>
+                <h2>Hello</h2>         
               </Col>
             </Row>
             <Row>
