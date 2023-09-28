@@ -32,13 +32,11 @@ function EditArtworkPage() {
       try {
         const { data } = await axiosReq.get(`/artwork/${id}/`);
         const { title, art_image, is_owner } = data;
-
         is_owner ? setArtworkData({ title, art_image }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
     };
-
     handleMount();
   }, [history, id]);
 
@@ -128,14 +126,9 @@ function EditArtworkPage() {
                       Change the image
                     </Form.Label>
                   </div>
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload">
-                   <Artwork src={Upload} message='Click to upload a piece of artwork' />
-                </Form.Label>
-
                 <Form.File
                 id="image-upload"
+                className="d-none"
                 accept="image/*"
                 onChange={handleChangeImage}
                 ref={imageInput}

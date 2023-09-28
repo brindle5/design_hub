@@ -46,7 +46,6 @@ function ArtPiecePage(props) {
           axiosReq.get(`/artwork/${id||idBackup.id}`),
         ]);
         setPiece({ results: [piece] });
-        // console.log(piece);
       } catch (err) {
         console.log(err);
       }
