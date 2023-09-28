@@ -214,8 +214,6 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ![Edit artwork lighthouse report](documentation/lighthouse_editartwork_screenshot.png)
 
-## Defensive Programming
-
 ## User Story Testing
 
 All of my site's features fulfil the needs set out in my user stories:
@@ -245,3 +243,11 @@ All of my site's features fulfil the needs set out in my user stories:
 One of the main bugs was changes to the models not being successfully migrated into the database. I fixed this by deleting the migrations files within each app, deleting the db.sqlite3 database and resetting the elephantsql database. Once I had done this I ran ‘python manage.py makemigrations’ and ‘python manage.py migrate’ and the problem was resolved.
 
 ## Unfixed Bugs
+
+#### Edit Artwork Page not loading
+
+One unfixed bug is the Edit Artwork page not loading when the user clicks on the Edit button.
+
+#### Delete functionality not working
+
+The user is unable to delete a piece of artwork by clicking on the delete icon next to their artwork.
