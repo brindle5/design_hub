@@ -41,3 +41,7 @@ class ArtworkDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Artwork.objects.annotate(
         comments_count=Count('comment', distinct=True)
     ).order_by('-added_date')
+
+    def get_serializer(self, *args, **kwargs):
+        kwargs['partial'] = True
+        return super(ArtworkDetail, self).get_serializer(*args, **kwargs)
