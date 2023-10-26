@@ -68,13 +68,12 @@ function EditArtworkPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("art_image", imageInput.current.files[0]);
     formData.append("title", title);
     if (imageInput?.current?.files[0]) {
       formData.append("art_image", imageInput.current.files[0]);
     }
     try {
-      const { data } = await axiosReq.put("/artwork/", formData);    
+      const { data } =  await axiosReq.put(`/artwork/${id}/`, formData);   
       history.push(`/artwork/${data.id}`);
     } catch (err) {
       console.log(err);

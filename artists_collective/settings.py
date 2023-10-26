@@ -65,6 +65,7 @@ DEBUG = 'DEBUG' in os.environ
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     'localhost',
+    '8000-brindle5-designhub-2qm4lz9cktg.ws-eu105.gitpod.io'
 ]
 
 # Application definition
