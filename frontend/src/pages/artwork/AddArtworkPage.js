@@ -53,7 +53,7 @@ function AddArtworkPage() {
       formData.append("art_image", imageInput.current.files[0]);
       formData.append("title", title);
       const { data } = await axiosReq.post("/artwork/", formData);    
-      history.push(`/artwork/${data.id}`);
+      history.push("/");
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

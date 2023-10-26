@@ -67,7 +67,7 @@ function EditArtworkPage() {
     }
     try {
       const { data } =  await axiosReq.put(`/artwork/${id}/`, formData);   
-      history.push(`/artwork/${data.id}`);
+      history.push('/');
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

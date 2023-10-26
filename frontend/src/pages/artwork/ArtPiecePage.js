@@ -70,8 +70,7 @@ function ArtPiecePage(props) {
           <Container key={piece.id}>
             <Row>
               <Col>
-                <h1>{piece.title} {piece.owner}</h1>
-                <h2>Hello</h2>         
+                <h1>{piece.title} {piece.owner}</h1>   
               </Col>
             </Row>
             <Row>
