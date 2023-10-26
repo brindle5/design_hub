@@ -350,8 +350,6 @@ I haven't found any differences in performance between the local and deployed si
 - Much of my code is based on the Code Institute [Moments](https://github.com/Code-Institute-Solutions/moments) and [Django REST](https://github.com/Code-Institute-Solutions/drf-api) walkthrough projects.
 - I used Tim Nelson’s Markdown builder for the [readme and testing documentation](https://traveltimn.github.io/markdown-builder/).
 
-### Media
-
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Julia Konovalova](https://github.com/IuliiaKonovalova) for her invaluable support and guidance.

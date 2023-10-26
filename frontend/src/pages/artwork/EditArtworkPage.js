@@ -1,7 +1,3 @@
-// Code based on CI Moments Project
-
-// jshint esversion: 11, jquery: true
-
 import { useHistory, useParams} from "react-router-dom"; 
 import { axiosReq } from "../../api/axiosDefaults";
 import React, { useState, useRef, useEffect } from "react";
@@ -34,16 +30,13 @@ function EditArtworkPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/artwork/${id}`);
+        const { data } = await axiosReq.get(`/artwork/${id}/`);
         const { title, art_image, is_owner } = data;
-        setArtworkData({ title, art_image });
-
         is_owner ? setArtworkData({ title, art_image }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
     };
-
     handleMount();
   }, [history, id]);
 
@@ -85,33 +78,33 @@ function EditArtworkPage() {
 
   const textFields = (
     <div className="text-center artInputField">
-      <Form.Group className="mb-3" controlId="title">
+    <Form.Group className="mb-3" controlId="title">
         <Form.Label className="d-none">Artwork Title</Form.Label>
-           <Form.Control 
-              type="text" 
-              placeholder="Artwork Title"
-              value={title}
-              onChange={handleAddTitle}
-              name="title" 
-              />
-            <Form.Text className="text-muted">          
-            </Form.Text>
-      </Form.Group> 
-        {errors?.title?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-                  {message}
-            </Alert>
-         ))}
-          <Button 
-              type="submit" 
-              variant="success">
-              Save changes
-          </Button>
-          <Button
-              variant="danger"
-              onClick={() => history.goBack()}>
-              Cancel
-            </Button>
+        <Form.Control 
+          type="text" 
+          placeholder="Artwork Title"
+          value={title}
+          onChange={handleAddTitle}
+          name="title" 
+          />
+        <Form.Text className="text-muted">          
+        </Form.Text>
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Button type="submit" variant="success">
+        Save changes
+      </Button>
+      <Button
+        variant="danger"
+        onClick={() => history.goBack()}
+        >
+        Cancel
+      </Button>
     </div>
   );
 
@@ -120,7 +113,8 @@ function EditArtworkPage() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
-            className='d-flex flex-column justify-content-center'>
+            className='d-flex flex-column justify-content-center'
+          >
             <Form.Group className="text-center artInputField">
                   <figure>
                     <Image src={art_image} rounded />
@@ -130,27 +124,25 @@ function EditArtworkPage() {
                       htmlFor="image-upload">
                       Change the image
                     </Form.Label>
-                  </div>                
+                  </div>
                 <Form.File
+                id="image-upload"
                 className="d-none"
-                  id="image-upload"
-                  accept="image/*"
-                  onChange={handleChangeImage}
-                  ref={imageInput}
-                />
+                accept="image/*"
+                onChange={handleChangeImage}
+                ref={imageInput}
+              />
             </Form.Group>
-                {errors?.art_image?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
+            {errors?.art_image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container>
-                {textFields}
-          </Container>          
+          <Container>{textFields}</Container>
         </Col>
       </Row>
     </Form>
