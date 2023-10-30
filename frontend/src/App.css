@@ -14,7 +14,7 @@
 .header {
   font-size: 2rem;
   font-weight: 600;
-  color: #40434E;
+  color: #F77F00;
 }
 
 /* Styling for signin/signup */
@@ -23,7 +23,11 @@
   padding-top: 6rem;
 }
 
-/* Styling for nav links */
+/* Styling for nav bar */
+
+.navbar {
+  background-color: #40434E;
+}
 
 .iconLink {
   padding: 1rem;

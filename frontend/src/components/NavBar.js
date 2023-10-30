@@ -36,7 +36,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
   <>
-
      <NavLink className="iconLink"
     exact to="/" onClick={handleSignOut}>
       <i className="fas fa-right-from-bracket">  </i>
@@ -63,7 +62,7 @@ const NavBar = () => {
 
   return (
  
-    <Navbar fixed="top" expand="md" expanded={expanded}>
+    <Navbar fixed="top" expand="md" expanded={expanded} className='navbar'>
     <Container>
 
   {currentUser && addArtworkIcon}
