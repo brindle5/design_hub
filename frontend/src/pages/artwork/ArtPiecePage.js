@@ -55,8 +55,8 @@ function ArtPiecePage(props) {
   }, [id]);
 
   return (
-    <Row className="h-100">
-        <div className="d-flex align-items-center">
+        <Row className="h-25">
+        <div className="d-flex align-items-start">
             <span>{piece.edited_date}</span>
                 {is_owner && ArtPiecePage && (
               <EditDeleteDropdown
