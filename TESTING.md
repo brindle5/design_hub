@@ -198,7 +198,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Responsiveness
 
-## Lighthouse Audit
+### Lighthouse Audit
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
@@ -213,6 +213,45 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 **Edit Artwork Page:**
 
 ![Edit artwork lighthouse report](documentation/lighthouse_editartwork_screenshot.png)
+
+### Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+User Action - Expected Result - Pass/Fail 
+
+#### Home Page (Before sign in/sign up)
+- Click on Sign In – Redirect to ‘Sign In’ page - Pass
+- Click on Sign Up – Redirect to ‘Sign Up’ page  - Pass
+
+#### Sign In page
+- Username – User is prompted to complete username field - Pass
+- Password - User is prompted to complete password field - Pass
+- User clicks ‘Sign In’ – Redirect to homepage - Pass
+
+#### Sign Up page
+- Username - User is prompted to enter a username – Pass
+- Password – User is prompted to enter a password – Pass
+- Password (again) – User is prompted to enter their password a second time – Pass
+- Click ‘Sign Me Up’ – Redirect to homepage  - Pass
+
+#### Home page (after Sign In/Sign Up)
+- Click on ‘Sign Out’ – User redirected to homepage showing Sign In/Sign Up options– Pass 
+- Click on ‘Add Artwork’ - Redirect to ‘Add Artwork page – Pass
+- Click on edit icon from three dots dropdown - Redirect to ‘Edit Artwork page – Pass
+- Click on delete icon from three dots dropdown – Artwork deleted from database  – Pass
+
+#### Add Artwork page
+- Image field – User is prompted to complete title field – Fail
+- Image field – User can upload an image but select a replacement image -  Pass
+- Title field – User can complete or leave blank – Fail
+- Click on ‘Cancel’ – Redirect to home page with no changes – Pass
+
+#### Edit Artwork page
+- Image field- User can change image, or leave as is - Pass
+- Title field – User can change title, or leave as is - Pass
+- Click on 'Save Changes' - Redirect to homepage, changes saved in the database - Pass
+- Click on ‘Cancel’ - Redirect to home page with no changes - Pass
 
 ## User Story Testing
 
@@ -234,7 +273,7 @@ All of my site's features fulfil the needs set out in my user stories:
 
 ![Search bar screenshot](documentation/features_searchbar_screenshot.png)
 
-## Bugs
+### Bugs
 
 **Fixed Bugs**
 
@@ -242,12 +281,14 @@ All of my site's features fulfil the needs set out in my user stories:
 
 One of the main bugs was changes to the models not being successfully migrated into the database. I fixed this by deleting the migrations files within each app, deleting the db.sqlite3 database and resetting the elephantsql database. Once I had done this I ran ‘python manage.py makemigrations’ and ‘python manage.py migrate’ and the problem was resolved.
 
-## Unfixed Bugs
-
 #### Edit Artwork Page not loading
 
-One unfixed bug is the Edit Artwork page not loading when the user clicks on the Edit button.
+To resolve this issue, I rolled back to a previous commit using git reset --hard. Then I removed a duplicated line of code that was causing the problem.
 
-#### Delete functionality not working
+#### Add/Edit Artwork Page not redirecting to homepage
 
-The user is unable to delete a piece of artwork by clicking on the delete icon next to their artwork.
+To fix this problem, I added 'history.push('/') after the images are sent to the database. 
+
+## Unfixed Bugs
+
+There are no unfixed bugs that I'm aware of.
