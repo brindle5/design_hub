@@ -84,7 +84,9 @@ function AddArtworkPage() {
       ))}
           <Button 
             type="submit" 
-            variant="success">
+            variant="success"
+            disabled={!art_image || !title}
+            >
             Add artwork
           </Button>
           <Button
