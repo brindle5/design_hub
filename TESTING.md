@@ -242,9 +242,9 @@ User Action - Expected Result - Pass/Fail
 - Click on delete icon from three dots dropdown – Artwork deleted from database  – Pass
 
 #### Add Artwork page
-- Image field – User is prompted to complete title field – Fail
+- Image field – User can't submit an empty image field – Pass
 - Image field – User can upload an image but select a replacement image -  Pass
-- Title field – User can complete or leave blank – Fail
+- Title field – User can't submit an empty title field – Pass
 - Click on ‘Cancel’ – Redirect to home page with no changes – Pass
 
 #### Edit Artwork page
