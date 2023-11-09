@@ -28,6 +28,7 @@ function ArtPiecePage(props) {
 
   const handleEdit = () => {
     history.push(`/artwork/${id||idBackup.id}/edit`);
+    history.push('/');
   };
 
   const handleDelete = async () => {
@@ -35,7 +36,7 @@ function ArtPiecePage(props) {
       await axiosRes.delete(`/artwork/${id||idBackup.id}/`);
       if(props.fetchPieces) {
         props.fetchPieces()
-      }
+        }   
     } catch (err) {
       console.log(err);
     }
