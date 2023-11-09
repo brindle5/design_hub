@@ -33,7 +33,9 @@ function ArtPiecePage(props) {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/artwork/${id||idBackup.id}/`);
-      history.goBack();
+      if(props.fetchPieces) {
+        props.fetchPieces()
+      }
     } catch (err) {
       console.log(err);
     }
