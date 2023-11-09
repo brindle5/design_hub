@@ -22,17 +22,17 @@ function ArtworkListPage({ message, filter = "" }) {
     const { pathname } = useLocation();
     const [query, setQuery] = useState("");
 
-    useEffect(() => {
-        const fetchPieces = async () => {
-          try {
-            const { data } = await axiosReq.get(`/artwork/?${filter}search=${query}`);
-            setPieces(data);
-            setHasLoaded(true);
-          } catch (err) {
-            console.log(err);
-          }
-        };
+    const fetchPieces = async () => {
+      try {
+        const { data } = await axiosReq.get(`/artwork/?${filter}search=${query}`);
+        setPieces(data);
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
+    useEffect(() => {
         setHasLoaded(false);
         const timer = setTimeout(() => {
           fetchPieces();
@@ -63,7 +63,7 @@ function ArtworkListPage({ message, filter = "" }) {
           <>
             {pieces.results.length ? (
               pieces.results.map((piece) => (
-                <ArtPiecePage key={piece.id} {...piece} />
+                <ArtPiecePage key={piece.id} {...piece} fetchPieces={fetchPieces}/>
               ))
             ) : (
               <Container className="display">
