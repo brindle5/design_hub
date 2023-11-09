@@ -28,7 +28,6 @@ function ArtPiecePage(props) {
 
   const handleEdit = () => {
     history.push(`/artwork/${id||idBackup.id}/edit`);
-    history.push('/');
   };
 
   const handleDelete = async () => {
